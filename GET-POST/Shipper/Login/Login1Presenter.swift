@@ -30,13 +30,13 @@ class Login1PresenterImp: Login1Presenter {
             case .error(let message):
                 updateLable.updateUILableError(lable: message)
             case .success(let data):
-                
+                 UserDefaults.standard.set(userName, forKey: "phoneNumber")
                 if data.nameType == "Shop" {
-                    UserDefaults.standard.set(userName, forKey: "phoneNumber")
+                    UserDefaults.standard.set(data.nameType, forKey: "typeAccount")
                     self.navigationPushHomeShop(data: data, view: view)
                 }
                 if data.nameType == "Shipper" {
-                    
+                     UserDefaults.standard.set(data.nameType, forKey: "typeAccount")
                     self.navigationPushHomeShipper(data: data, view: view)
                 }
             }

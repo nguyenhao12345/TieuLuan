@@ -15,7 +15,7 @@
 //            let user = DataUser(name: <#T##String#>, pass: <#T##String#>, image: <#T##String#>)
 //            completion(dataNews)
 //        }
-//    }
+//    }x
 //}
 struct DataUser {
     let phonenumber: String

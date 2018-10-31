@@ -122,6 +122,7 @@ extension Sign1: PushPopNavigation {
             present(view, animated: true, completion: nil)
             return
         }
+        navigationController.isNavigationBarHidden = true
         navigationController.pushViewController(view, animated: true)
     }
     func present(view: UIViewController) {

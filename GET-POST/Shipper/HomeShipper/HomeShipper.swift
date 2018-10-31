@@ -10,10 +10,19 @@ import UIKit
 
 class HomeShipper: UIViewController {
 
+    @IBAction func clickLogout(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "phoneNumber")
+        UserDefaults.standard.removeObject(forKey: "typeAccount")
+        let vc = UIStoryboard(name: "Login1", bundle: Bundle.main).instantiateViewController(withIdentifier: "Login1")
+        let navVC = UINavigationController(rootViewController: vc)
+        let share = UIApplication.shared.delegate as? AppDelegate
+        share?.window?.rootViewController = navVC
+        share?.window?.makeKeyAndVisible()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.hidesBackButton = true;
+        navigationController?.isNavigationBarHidden = false
     }
     
 

@@ -21,11 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func check() {
         if UserDefaults.standard.value(forKey: "phoneNumber") != nil {
-            let vc = UIStoryboard(name: "HomeShop", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeShop")
-            let navVC = UINavigationController(rootViewController: vc)
-            let share = UIApplication.shared.delegate as? AppDelegate
-            share?.window?.rootViewController = navVC
-            share?.window?.makeKeyAndVisible()
+            if  UserDefaults.standard.value(forKey: "typeAccount") as? String ?? "" == "Shop"{
+                let vc = UIStoryboard(name: "HomeShop", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeShop")
+                let navVC = UINavigationController(rootViewController: vc)
+                navVC.navigationController?.isToolbarHidden = true
+                let share = UIApplication.shared.delegate as? AppDelegate
+                share?.window?.rootViewController = navVC
+                share?.window?.makeKeyAndVisible()
+            }
+            if  UserDefaults.standard.value(forKey: "typeAccount") as? String ?? "" == "Shipper"{
+                let vc = UIStoryboard(name: "HomeShipper", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeShipper")
+                let navVC = UINavigationController(rootViewController: vc)
+                navVC.navigationController?.isToolbarHidden = true
+                let share = UIApplication.shared.delegate as? AppDelegate
+                share?.window?.rootViewController = navVC
+                share?.window?.makeKeyAndVisible()
+            }
         }
 //        else {
 //            let vc = UIStoryboard(name: "Login1", bundle: Bundle.main).instantiateViewController(withIdentifier: "Login1")

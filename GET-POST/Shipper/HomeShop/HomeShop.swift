@@ -11,21 +11,22 @@ import MapKit
 import CoreLocation
 
 
-//extension HomeShop: TextFieldCustomDelegate {
-//    func beganTouch(keyText: TextFieldCustom) {
-//        switch keyText {
-//        case txtStartPoint:
-//            print("abc")
-//        default:
-//            break
-//        }
-//    }
-//    func endedTouch(keyText: TextFieldCustom) {
-//        if keyText == txtStartPoint {
-//            print("cab")
-//        }
-//    }
-//}
+extension HomeShop: TextFieldCustomDelegate {
+    func beganTouch(keyText: TextFieldCustom) {
+        switch keyText {
+        case txtStartPoint:
+            print("abc")
+        default:
+            break
+        }
+    }
+    
+    func endedTouch(keyText: TextFieldCustom) {
+        if keyText == txtStartPoint {
+            print("cab")
+        }
+    }
+}
 
 
 extension HomeShop: PushPopNavigation {
@@ -87,8 +88,8 @@ extension HomeShop: UpdateUIHomeShop {
         })
     }
 }
-class HomeShop: UIViewController,UISearchBarDelegate {
-    
+class HomeShop: UIViewController, UISearchBarDelegate {
+    // suy nghi doi ten
     @IBOutlet weak var imgCenterMap: UIImageView!
     @IBOutlet weak var view3_Name: UITextField!
     @IBOutlet weak var view3_Phone: UITextField!
@@ -115,13 +116,23 @@ class HomeShop: UIViewController,UISearchBarDelegate {
     
     @IBOutlet weak var viewBtnPostItem: UIView!
     
-    @IBAction func switchMap(_ sender: Any) {
+ 
+    @IBAction func changeTypeMap(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            mapview.mapType = .standard
+        case 1:
+            mapview.mapType = .satellite
+        default:
+            break
+        }
     }
     
     @IBAction func taptxtStart(_ sender: Any) {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Địa điểm Shipper lấy hàng"
+        searchController.searchBar.placeholder = "Địa điểm Shipper"
+        
         searchController.searchBar.showsCancelButton = true
         present(searchController, animated: true, completion: nil)
     }
@@ -133,9 +144,8 @@ class HomeShop: UIViewController,UISearchBarDelegate {
         searchController.searchBar.showsCancelButton = false
         present(searchController, animated: true, completion: nil)
     }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
-    {
+    // phan anh dung ten cua func, dong tu / cum dong tu
+    func tappedReturnButton(_ searchBar: UISearchBar) {
         //Ignoring user
         UIApplication.shared.beginIgnoringInteractionEvents()
         
@@ -185,6 +195,7 @@ class HomeShop: UIViewController,UISearchBarDelegate {
                 self.mapview.addAnnotation(annotation)
                 var geocoder = CLGeocoder()
                 let location = CLLocation(latitude: latitude ?? 53.9530037, longitude: longitude ?? 1.0867513)
+                // [weak self]
                 geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
                     if error != nil {
                         print(error ?? "loi map roi")
@@ -199,6 +210,7 @@ class HomeShop: UIViewController,UISearchBarDelegate {
                         
                         DispatchQueue.main.async {
                             switch searchBar.placeholder {
+                                
                             case "Địa điểm Shipper lấy hàng":
                                 self.txtStartPoint.text = "\(streetNumber) , \(streetName) , \(ward) , \(district) , \(city) \(country)"
                             case "Địa điểm Shipper giao hàng":
@@ -220,11 +232,13 @@ class HomeShop: UIViewController,UISearchBarDelegate {
             
         }
     }
+    
     @IBAction func clickCancelCreateNewItem(_ sender: Any) {
         updateUIAfterPostItemSucess()
     }
     
     @IBOutlet weak var btnclickNewItem: UIButton!
+    
     @IBAction func clickCreateNewItem(_ sender: Any) {
         viewInfoPost.isHidden = false
         viewBtnPostItem.isHidden = false
@@ -235,11 +249,12 @@ class HomeShop: UIViewController,UISearchBarDelegate {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true)
     }
-    @IBAction func clickLogout(_ sender: Any) {
+    @IBAction private func clickLogout(_ sender: Any) {
         presenter?.clickLoutout(view: self)
     }
     
     @IBOutlet weak var btnTaiKhoan: UIButton!
+    
     @IBAction func clickAccount(_ sender: Any) {
         view1.isHidden = true
         view2.isHidden = true
@@ -264,7 +279,7 @@ class HomeShop: UIViewController,UISearchBarDelegate {
         txtPrice.text      = ""
         txtContent.text    = ""
        
-                navigationItem.title = btnTaoDon.titleLabel?.text
+        navigationItem.title = btnTaoDon.titleLabel?.text
        
     }
     
@@ -273,6 +288,7 @@ class HomeShop: UIViewController,UISearchBarDelegate {
         presenter?.clickPostItem(startPoint: txtStartPoint.text ?? "" , lastPoint: txtLastPoint.text ?? "", price: txtPrice.text ?? "" , content: txtContent.text ?? "", phonenumber: phone, mesError: self, view: self, constrain: self, updateUIAfterSuccess: self)
 
     }
+    
     var presenter: HomeShopPresenter?
     private var name: String  = ""
     private var hinh: String  = ""
@@ -285,7 +301,8 @@ class HomeShop: UIViewController,UISearchBarDelegate {
         self.phone = phone
         self.pass = pass
     }
-    private let news = Service()
+    //private let news = Service()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = HomeShopPresenterImp()
@@ -293,7 +310,7 @@ class HomeShop: UIViewController,UISearchBarDelegate {
         LoadImageFromService.share.loadPhotoFromService(hinh, completion: { (imageToCache) in
             self.image.image = imageToCache
         })
-        mapview.mapType = MKMapType.satellite
+        mapview.mapType = MKMapType.standard
         navigationItem.title = btnTaoDon.titleLabel?.text
         
         view3_Name.text = name
@@ -311,6 +328,11 @@ class HomeShop: UIViewController,UISearchBarDelegate {
         }
         viewInfoPost.isHidden = true
         viewBtnPostItem.isHidden = true
+        print(phone)
+        navigationController?.isNavigationBarHidden = false
+        navigationItem.hidesBackButton = true;
+        
+//        navigationItem.hidesBackButton = true;
     }
     
     let locationManager = CLLocationManager()
@@ -333,6 +355,7 @@ class HomeShop: UIViewController,UISearchBarDelegate {
         }
         else { }
     }
+    
     func checkLocationAuthorization() {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:  // dc uy quyen khi sd
@@ -361,6 +384,7 @@ class HomeShop: UIViewController,UISearchBarDelegate {
         let longitude = mapView.centerCoordinate.longitude
         return CLLocation(latitude: latitude, longitude: longitude)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //        self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -372,8 +396,6 @@ class HomeShop: UIViewController,UISearchBarDelegate {
     }
 }
 extension HomeShop: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }

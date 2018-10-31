@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol PushPopNavigation {
+    func pushVC(view: UIViewController)
+    func present(view: UIViewController)
+    func popVC(view: UIViewController)
+}
+
 class Login1: UIViewController {
     
     @IBOutlet weak var btnLogin: UIButton!
@@ -34,23 +40,19 @@ class Login1: UIViewController {
         }
         homeShop.delegate = presenterExport
 
-        self.navigationController?.isNavigationBarHidden = true
+        //self.navigationController?.isNavigationBarHidden = true
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        //self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
-protocol PushPopNavigation {
-    func pushVC(view: UIViewController)
-    func present(view: UIViewController)
-    func popVC(view: UIViewController)
-}
+
 extension Login1: PushPopNavigation {
     func popVC(view: UIViewController) {
         
@@ -66,9 +68,11 @@ extension Login1: PushPopNavigation {
             present(view, animated: true, completion: nil)
             return
         }
+        navigationController.isNavigationBarHidden = true
         navigationController.pushViewController(view, animated: true)
     }
 }
+
 protocol UpdateUI {
     func updateUILableError(lable: String)
     func setUIImage() -> UIImage?
@@ -80,7 +84,6 @@ protocol UpdateUI {
 }
 extension Login1: UpdateUI {
 
-    
    func updataUIImagePicker(image: UIImage) {
     }
     func updataUIButton() { //disable btn
@@ -99,6 +102,7 @@ extension Login1: UpdateUI {
         mesError.text = lable
     }
 }
+
 extension Login1: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

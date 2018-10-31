@@ -24,11 +24,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKH-S3-dDm">
+                                <rect key="frame" x="327" y="637" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="clickLogout:" destination="gvX-iY-juv" eventType="touchUpInside" id="WMZ-eC-Y5b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UKH-Wa-dvl" firstAttribute="width" secondItem="0bl-zA-7d7" secondAttribute="width" id="2Cv-UO-UeL"/>
                             <constraint firstItem="UKH-Wa-dvl" firstAttribute="centerY" secondItem="ISo-pU-b3F" secondAttribute="centerY" id="Owq-bD-Slb"/>
+                            <constraint firstItem="ISo-pU-b3F" firstAttribute="bottom" secondItem="MKH-S3-dDm" secondAttribute="bottom" id="ZVm-Vi-zON"/>
+                            <constraint firstItem="ISo-pU-b3F" firstAttribute="trailing" secondItem="MKH-S3-dDm" secondAttribute="trailing" id="bgd-pk-nPC"/>
                             <constraint firstItem="UKH-Wa-dvl" firstAttribute="height" secondItem="0bl-zA-7d7" secondAttribute="height" id="psB-FL-b4v"/>
                             <constraint firstItem="UKH-Wa-dvl" firstAttribute="centerX" secondItem="ISo-pU-b3F" secondAttribute="centerX" id="yiA-JA-zko"/>
                         </constraints>

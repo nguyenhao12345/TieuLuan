@@ -6,7 +6,6 @@
 //  Copyright © 2018 datnguyen. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import MapKit
 import CoreLocation
@@ -30,7 +29,7 @@ class HomeShopPresenterImp: HomeShopPresenter {
         }))
         alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { (action:UIAlertAction) in
             UserDefaults.standard.removeObject(forKey: "phoneNumber")
-            
+            UserDefaults.standard.removeObject(forKey: "typeAccount")
             let vc = UIStoryboard(name: "Login1", bundle: Bundle.main).instantiateViewController(withIdentifier: "Login1")
             let navVC = UINavigationController(rootViewController: vc)
             let share = UIApplication.shared.delegate as? AppDelegate
@@ -116,8 +115,4 @@ class HomeShopPresenterImp: HomeShopPresenter {
         }
     }
     var delegate: HomeShopPresenterDelegate?
-    
-    
-    
-    
 }

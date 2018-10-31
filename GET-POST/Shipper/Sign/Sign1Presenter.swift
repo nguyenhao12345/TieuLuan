@@ -136,11 +136,13 @@ class Sign1PresenterImp: Sign1Presenter {
                 updateLable.updateUILableError(lable: message)
             case .success(let data):
                 updateUIButton.updataUIButton()
+                 UserDefaults.standard.set(userName, forKey: "phoneNumber")
                 if data.nameType == "Shop" {
-                    UserDefaults.standard.set(userName, forKey: "phoneNumber")
+             	       UserDefaults.standard.set(data.nameType, forKey: "typeAccount")
                      self.navigationPushHomeShop(data: data, view: view)
                 }
                 if data.nameType == "Shipper" {
+                       UserDefaults.standard.set(data.nameType, forKey: "typeAccount")
                     self.navigationPushHomeShipper(data: data, view: view)
                 }
             }

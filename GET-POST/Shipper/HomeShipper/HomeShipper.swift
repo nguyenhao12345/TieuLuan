@@ -8,32 +8,29 @@
 
 import UIKit
 
-class HomeShipper: UIViewController {
-
-    @IBAction func clickLogout(_ sender: Any) {
-        UserDefaults.standard.removeObject(forKey: "phoneNumber")
-        UserDefaults.standard.removeObject(forKey: "typeAccount")
-        let vc = UIStoryboard(name: "Login1", bundle: Bundle.main).instantiateViewController(withIdentifier: "Login1")
-        let navVC = UINavigationController(rootViewController: vc)
-        let share = UIApplication.shared.delegate as? AppDelegate
-        share?.window?.rootViewController = navVC
-        share?.window?.makeKeyAndVisible()
-    }
+class HomeShipper: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true;
-        navigationController?.isNavigationBarHidden = false
+        let newViewStoryboard = UIStoryboard(name: "NewViewController", bundle: nil)
+        guard let newViewController =  newViewStoryboard.instantiateViewController(withIdentifier: "newViewController") as? NewViewController else { return }
+        let navigationNewViewController = UINavigationController(rootViewController: newViewController)
+        navigationNewViewController.tabBarItem.title = "Mới nhất"
+        let storageViewStroryboard = UIStoryboard(name: "StorageViewController", bundle: nil)
+        guard let storageViewController = storageViewStroryboard.instantiateViewController(withIdentifier: "storageViewController") as? StorageViewController else { return }
+        let navigationStorageViewController = UINavigationController(rootViewController: storageViewController)
+        navigationStorageViewController.tabBarItem.title = "Lưu trữ"
+        let accountViewStoryboard = UIStoryboard(name: "AccountViewController", bundle: nil)
+        guard let accountViewController = accountViewStoryboard.instantiateViewController(withIdentifier: "accountViewController") as? AccountViewController else { return }
+        let navigationAccountViewController = UINavigationController(rootViewController: accountViewController)
+        navigationAccountViewController.tabBarItem.title = "tài khoản"
+        let createViewStoryboard = UIStoryboard(name: "CreateViewController", bundle: nil)
+        guard let createViewController = createViewStoryboard.instantiateViewController(withIdentifier: "createViewController") as? CreateViewController else { return }
+        let navigationCreateViewController = UINavigationController(rootViewController: createViewController)
+        navigationCreateViewController.tabBarItem.title = "Tạo mới"
+        viewControllers = [navigationNewViewController, navigationStorageViewController, navigationAccountViewController, navigationCreateViewController]
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
-    */
-
 }

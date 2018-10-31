@@ -40,6 +40,16 @@
 		CCAF150821839C4F0038A80A /* HomeShipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF150721839C4F0038A80A /* HomeShipper.swift */; };
 		CCCC114A2184CAF800C30010 /* HomeShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC11492184CAF800C30010 /* HomeShopPresenter.swift */; };
 		CCDCAD4F217EE81C00699665 /* Sign1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */; };
+		DAFC399921894F8B00E02B9B /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFC399821894F8B00E02B9B /* StorageViewController.swift */; };
+		DAFC399B21894FB300E02B9B /* StorageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAFC399A21894FB300E02B9B /* StorageViewController.storyboard */; };
+		DAFC399E21894FDF00E02B9B /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFC399D21894FDF00E02B9B /* CreateViewController.swift */; };
+		DAFC39A02189500000E02B9B /* CreateViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAFC399F2189500000E02B9B /* CreateViewController.storyboard */; };
+		DAFC39A22189501800E02B9B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFC39A12189501800E02B9B /* AccountViewController.swift */; };
+		DAFC39A42189502200E02B9B /* AccountViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAFC39A32189502200E02B9B /* AccountViewController.storyboard */; };
+		DAFC39A72189505800E02B9B /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFC39A62189505800E02B9B /* NewViewController.swift */; };
+		DAFC39A92189506000E02B9B /* NewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAFC39A82189506000E02B9B /* NewViewController.storyboard */; };
+		DAFC39AE218961E100E02B9B /* CommunicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFC39AD218961E100E02B9B /* CommunicationTableViewCell.swift */; };
+		DAFC39B02189621E00E02B9B /* CommunicationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFC39AF2189621E00E02B9B /* CommunicationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +88,16 @@
 		CCAF150721839C4F0038A80A /* HomeShipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShipper.swift; sourceTree = "<group>"; };
 		CCCC11492184CAF800C30010 /* HomeShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShopPresenter.swift; sourceTree = "<group>"; };
 		CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign1Presenter.swift; sourceTree = "<group>"; };
+		DAFC399821894F8B00E02B9B /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
+		DAFC399A21894FB300E02B9B /* StorageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StorageViewController.storyboard; sourceTree = "<group>"; };
+		DAFC399D21894FDF00E02B9B /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		DAFC399F2189500000E02B9B /* CreateViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateViewController.storyboard; sourceTree = "<group>"; };
+		DAFC39A12189501800E02B9B /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		DAFC39A32189502200E02B9B /* AccountViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountViewController.storyboard; sourceTree = "<group>"; };
+		DAFC39A62189505800E02B9B /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		DAFC39A82189506000E02B9B /* NewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewViewController.storyboard; sourceTree = "<group>"; };
+		DAFC39AD218961E100E02B9B /* CommunicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationTableViewCell.swift; sourceTree = "<group>"; };
+		DAFC39AF2189621E00E02B9B /* CommunicationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunicationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +214,10 @@
 		CCCC11472184C86400C30010 /* HomeShipper */ = {
 			isa = PBXGroup;
 			children = (
+				DAFC399621894F1A00E02B9B /* StorageScreen */,
+				DAFC399521894EF200E02B9B /* CreateScreen */,
+				DAFC399421894EA700E02B9B /* AccountScreen */,
+				DAFC399321894E5A00E02B9B /* NewScreen */,
 				CCAF150521839C270038A80A /* HomeShipper.storyboard */,
 				CCAF150721839C4F0038A80A /* HomeShipper.swift */,
 			);
@@ -210,6 +234,76 @@
 				CC5146A32187A3DA000E4942 /* TextFieldCustom.swift */,
 			);
 			path = HomeShop;
+			sourceTree = "<group>";
+		};
+		DAFC399321894E5A00E02B9B /* NewScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DAFC39A52189504E00E02B9B /* View */,
+			);
+			path = NewScreen;
+			sourceTree = "<group>";
+		};
+		DAFC399421894EA700E02B9B /* AccountScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DAFC39AA2189542200E02B9B /* View */,
+			);
+			path = AccountScreen;
+			sourceTree = "<group>";
+		};
+		DAFC399521894EF200E02B9B /* CreateScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DAFC399C21894FD300E02B9B /* View */,
+			);
+			path = CreateScreen;
+			sourceTree = "<group>";
+		};
+		DAFC399621894F1A00E02B9B /* StorageScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DAFC399721894F5200E02B9B /* View */,
+			);
+			path = StorageScreen;
+			sourceTree = "<group>";
+		};
+		DAFC399721894F5200E02B9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAFC399821894F8B00E02B9B /* StorageViewController.swift */,
+				DAFC399A21894FB300E02B9B /* StorageViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAFC399C21894FD300E02B9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAFC399D21894FDF00E02B9B /* CreateViewController.swift */,
+				DAFC399F2189500000E02B9B /* CreateViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAFC39A52189504E00E02B9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAFC39A62189505800E02B9B /* NewViewController.swift */,
+				DAFC39A82189506000E02B9B /* NewViewController.storyboard */,
+				DAFC39AD218961E100E02B9B /* CommunicationTableViewCell.swift */,
+				DAFC39AF2189621E00E02B9B /* CommunicationTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAFC39AA2189542200E02B9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAFC39A32189502200E02B9B /* AccountViewController.storyboard */,
+				DAFC39A12189501800E02B9B /* AccountViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,13 +371,18 @@
 				CC6794232186AB75006DAF34 /* SignUser.php in Resources */,
 				CC6794222186AB75006DAF34 /* getDataLogined.php in Resources */,
 				CC83202A21865C23007F72FD /* Cell.xib in Resources */,
+				DAFC39A92189506000E02B9B /* NewViewController.storyboard in Resources */,
 				AA1BAC7C1DA26D5500204340 /* LaunchScreen.storyboard in Resources */,
+				DAFC39B02189621E00E02B9B /* CommunicationTableViewCell.xib in Resources */,
 				CCAF150621839C270038A80A /* HomeShipper.storyboard in Resources */,
 				CC763B26217C34A900717AB8 /* Sign1.storyboard in Resources */,
 				AA1BAC791DA26D5500204340 /* Assets.xcassets in Resources */,
 				CC763B24217C339B00717AB8 /* Login2.storyboard in Resources */,
 				AA1BAC771DA26D5500204340 /* Main.storyboard in Resources */,
+				DAFC399B21894FB300E02B9B /* StorageViewController.storyboard in Resources */,
+				DAFC39A02189500000E02B9B /* CreateViewController.storyboard in Resources */,
 				CC763B22217C233800717AB8 /* Login1.storyboard in Resources */,
+				DAFC39A42189502200E02B9B /* AccountViewController.storyboard in Resources */,
 				CC6794212186AB75006DAF34 /* AddItemOfShop.php in Resources */,
 				CC763B2E217C47F200717AB8 /* HomeShop.storyboard in Resources */,
 			);
@@ -297,17 +396,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCAF150821839C4F0038A80A /* HomeShipper.swift in Sources */,
+				DAFC39A22189501800E02B9B /* AccountViewController.swift in Sources */,
 				CCDCAD4F217EE81C00699665 /* Sign1Presenter.swift in Sources */,
 				AA1BAC741DA26D5500204340 /* ViewController.swift in Sources */,
 				CCCC114A2184CAF800C30010 /* HomeShopPresenter.swift in Sources */,
 				CC763B2C217C476800717AB8 /* Sign1.swift in Sources */,
+				DAFC39A72189505800E02B9B /* NewViewController.swift in Sources */,
 				CC763B30217C481200717AB8 /* HomeShop.swift in Sources */,
 				CC67942521877E92006DAF34 /* ExtensionAnimationUIbutton.swift in Sources */,
 				CC152FFC2181048100B83816 /* ExtensionCollection.swift in Sources */,
 				CC497618217A28C800878ED8 /* MyImage.swift in Sources */,
+				DAFC399921894F8B00E02B9B /* StorageViewController.swift in Sources */,
 				CC763B32217E2A6800717AB8 /* LoadImage.swift in Sources */,
 				CC152FFA217F2CEB00B83816 /* Login1Presenter.swift in Sources */,
+				DAFC399E21894FDF00E02B9B /* CreateViewController.swift in Sources */,
 				CC763B2A217C475300717AB8 /* Login2.swift in Sources */,
+				DAFC39AE218961E100E02B9B /* CommunicationTableViewCell.swift in Sources */,
 				CC49761C217B058400878ED8 /* Service.swift in Sources */,
 				CC763B28217C474400717AB8 /* Login1.swift in Sources */,
 				CC49761E217B07A100878ED8 /* ViewControllerPresenter.swift in Sources */,

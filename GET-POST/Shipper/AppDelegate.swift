@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 share?.window?.makeKeyAndVisible()
             }
             if  UserDefaults.standard.value(forKey: "typeAccount") as? String ?? "" == "Shipper"{
-                let vc = UIStoryboard(name: "HomeShipper", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeShipper")
+                guard let vc = UIStoryboard(name: "HomeShipper", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeShipper") as? HomeShipper else { return }
                 let navVC = UINavigationController(rootViewController: vc)
                 navVC.navigationController?.isToolbarHidden = true
                 let share = UIApplication.shared.delegate as? AppDelegate
@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 share?.window?.makeKeyAndVisible()
             }
         }
+       
 //        else {
 //            let vc = UIStoryboard(name: "Login1", bundle: Bundle.main).instantiateViewController(withIdentifier: "Login1")
 //            let navVC = UINavigationController(rootViewController: vc)

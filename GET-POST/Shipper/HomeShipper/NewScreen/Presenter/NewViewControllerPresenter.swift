@@ -36,8 +36,8 @@ class NewViewControllerPresenterImp: NewViewControllerPresenter {
         let advance = NewShop.getAdvance()
         let price = NewShop.getPrice()
         let informationExtra = NewShop.getInformationExtra()
+        
         communicationTableViewCell.config(serialText: serial, shopNameText: ShopName, locationShopText: locationShop, deliveyLocationText: deliveryLocation, productShopText: product, advanceText: advance, priceText: price, informationExtraText: informationExtra)
-        print(NewShop.getTotalHeightModel())
         return communicationTableViewCell
     }
     
@@ -45,6 +45,7 @@ class NewViewControllerPresenterImp: NewViewControllerPresenter {
         let margin: CGFloat = 115
         let totalHeightModelNewView = NewShop.getTotalHeightModel()
         let totalHeight = margin + totalHeightModelNewView
+        
         return totalHeight
     }
 }

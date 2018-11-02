@@ -42,6 +42,8 @@
 		CCDCAD4F217EE81C00699665 /* Sign1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */; };
 		DA4C185D2189E892007DDA46 /* NewViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C185C2189E892007DDA46 /* NewViewControllerPresenter.swift */; };
 		DA4C18602189F3D3007DDA46 /* ModelNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C185F2189F3D3007DDA46 /* ModelNewView.swift */; };
+		DAEDB3A5218C5D9F00B8F0D8 /* HomeShiperPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEDB3A4218C5D9F00B8F0D8 /* HomeShiperPresenter.swift */; };
+		DAEDB3A8218C863300B8F0D8 /* ModelTabBarItemScreenShiper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEDB3A7218C863300B8F0D8 /* ModelTabBarItemScreenShiper.swift */; };
 		DAFC399921894F8B00E02B9B /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFC399821894F8B00E02B9B /* StorageViewController.swift */; };
 		DAFC399B21894FB300E02B9B /* StorageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAFC399A21894FB300E02B9B /* StorageViewController.storyboard */; };
 		DAFC399E21894FDF00E02B9B /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFC399D21894FDF00E02B9B /* CreateViewController.swift */; };
@@ -92,6 +94,8 @@
 		CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign1Presenter.swift; sourceTree = "<group>"; };
 		DA4C185C2189E892007DDA46 /* NewViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewControllerPresenter.swift; sourceTree = "<group>"; };
 		DA4C185F2189F3D3007DDA46 /* ModelNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNewView.swift; sourceTree = "<group>"; };
+		DAEDB3A4218C5D9F00B8F0D8 /* HomeShiperPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShiperPresenter.swift; sourceTree = "<group>"; };
+		DAEDB3A7218C863300B8F0D8 /* ModelTabBarItemScreenShiper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTabBarItemScreenShiper.swift; sourceTree = "<group>"; };
 		DAFC399821894F8B00E02B9B /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		DAFC399A21894FB300E02B9B /* StorageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StorageViewController.storyboard; sourceTree = "<group>"; };
 		DAFC399D21894FDF00E02B9B /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 		CC83202C21865DD6007F72FD /* Shipper */ = {
 			isa = PBXGroup;
 			children = (
+				DAEDB3A6218C85F700B8F0D8 /* Model */,
+				DAEDB3A3218C5D8200B8F0D8 /* Presenter */,
 				AA1BAC711DA26D5500204340 /* AppDelegate.swift */,
 				AA1BAC7A1DA26D5500204340 /* LaunchScreen.storyboard */,
 				AA1BAC781DA26D5500204340 /* Assets.xcassets */,
@@ -252,6 +258,22 @@
 			isa = PBXGroup;
 			children = (
 				DA4C185F2189F3D3007DDA46 /* ModelNewView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAEDB3A3218C5D8200B8F0D8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DAEDB3A4218C5D9F00B8F0D8 /* HomeShiperPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DAEDB3A6218C85F700B8F0D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAEDB3A7218C863300B8F0D8 /* ModelTabBarItemScreenShiper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -429,6 +451,7 @@
 				CC152FFC2181048100B83816 /* ExtensionCollection.swift in Sources */,
 				CC497618217A28C800878ED8 /* MyImage.swift in Sources */,
 				DAFC399921894F8B00E02B9B /* StorageViewController.swift in Sources */,
+				DAEDB3A5218C5D9F00B8F0D8 /* HomeShiperPresenter.swift in Sources */,
 				CC763B32217E2A6800717AB8 /* LoadImage.swift in Sources */,
 				DA4C18602189F3D3007DDA46 /* ModelNewView.swift in Sources */,
 				CC152FFA217F2CEB00B83816 /* Login1Presenter.swift in Sources */,
@@ -437,6 +460,7 @@
 				DAFC39AE218961E100E02B9B /* CommunicationTableViewCell.swift in Sources */,
 				CC49761C217B058400878ED8 /* Service.swift in Sources */,
 				DA4C185D2189E892007DDA46 /* NewViewControllerPresenter.swift in Sources */,
+				DAEDB3A8218C863300B8F0D8 /* ModelTabBarItemScreenShiper.swift in Sources */,
 				CC763B28217C474400717AB8 /* Login1.swift in Sources */,
 				CC49761E217B07A100878ED8 /* ViewControllerPresenter.swift in Sources */,
 				CC5146A42187A3DA000E4942 /* TextFieldCustom.swift in Sources */,

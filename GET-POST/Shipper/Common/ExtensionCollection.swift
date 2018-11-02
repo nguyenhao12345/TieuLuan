@@ -47,6 +47,15 @@ extension String {
         
         return label.frame.height
     }
+    
+    func height(constraintedWidth width: CGFloat) -> CGFloat {
+        let label =  UILabel(frame: CGRect(x: 0, y: 0, width: width, height: .greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        label.text = self
+        label.sizeToFit()
+        
+        return label.frame.height
+    }
 }
 extension UIImage {
     func getHeight() {

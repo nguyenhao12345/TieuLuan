@@ -40,6 +40,8 @@
 		CCAF150821839C4F0038A80A /* HomeShipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF150721839C4F0038A80A /* HomeShipper.swift */; };
 		CCCC114A2184CAF800C30010 /* HomeShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC11492184CAF800C30010 /* HomeShopPresenter.swift */; };
 		CCDCAD4F217EE81C00699665 /* Sign1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */; };
+		DA4C185D2189E892007DDA46 /* NewViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C185C2189E892007DDA46 /* NewViewControllerPresenter.swift */; };
+		DA4C18602189F3D3007DDA46 /* ModelNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C185F2189F3D3007DDA46 /* ModelNewView.swift */; };
 		DAFC399921894F8B00E02B9B /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFC399821894F8B00E02B9B /* StorageViewController.swift */; };
 		DAFC399B21894FB300E02B9B /* StorageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAFC399A21894FB300E02B9B /* StorageViewController.storyboard */; };
 		DAFC399E21894FDF00E02B9B /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFC399D21894FDF00E02B9B /* CreateViewController.swift */; };
@@ -88,6 +90,8 @@
 		CCAF150721839C4F0038A80A /* HomeShipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShipper.swift; sourceTree = "<group>"; };
 		CCCC11492184CAF800C30010 /* HomeShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShopPresenter.swift; sourceTree = "<group>"; };
 		CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign1Presenter.swift; sourceTree = "<group>"; };
+		DA4C185C2189E892007DDA46 /* NewViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewControllerPresenter.swift; sourceTree = "<group>"; };
+		DA4C185F2189F3D3007DDA46 /* ModelNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNewView.swift; sourceTree = "<group>"; };
 		DAFC399821894F8B00E02B9B /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		DAFC399A21894FB300E02B9B /* StorageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StorageViewController.storyboard; sourceTree = "<group>"; };
 		DAFC399D21894FDF00E02B9B /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -236,9 +240,27 @@
 			path = HomeShop;
 			sourceTree = "<group>";
 		};
+		DA4C185B2189E873007DDA46 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DA4C185C2189E892007DDA46 /* NewViewControllerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DA4C185E2189F35C007DDA46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA4C185F2189F3D3007DDA46 /* ModelNewView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DAFC399321894E5A00E02B9B /* NewScreen */ = {
 			isa = PBXGroup;
 			children = (
+				DA4C185E2189F35C007DDA46 /* Model */,
+				DA4C185B2189E873007DDA46 /* Presenter */,
 				DAFC39A52189504E00E02B9B /* View */,
 			);
 			path = NewScreen;
@@ -408,11 +430,13 @@
 				CC497618217A28C800878ED8 /* MyImage.swift in Sources */,
 				DAFC399921894F8B00E02B9B /* StorageViewController.swift in Sources */,
 				CC763B32217E2A6800717AB8 /* LoadImage.swift in Sources */,
+				DA4C18602189F3D3007DDA46 /* ModelNewView.swift in Sources */,
 				CC152FFA217F2CEB00B83816 /* Login1Presenter.swift in Sources */,
 				DAFC399E21894FDF00E02B9B /* CreateViewController.swift in Sources */,
 				CC763B2A217C475300717AB8 /* Login2.swift in Sources */,
 				DAFC39AE218961E100E02B9B /* CommunicationTableViewCell.swift in Sources */,
 				CC49761C217B058400878ED8 /* Service.swift in Sources */,
+				DA4C185D2189E892007DDA46 /* NewViewControllerPresenter.swift in Sources */,
 				CC763B28217C474400717AB8 /* Login1.swift in Sources */,
 				CC49761E217B07A100878ED8 /* ViewControllerPresenter.swift in Sources */,
 				CC5146A42187A3DA000E4942 /* TextFieldCustom.swift in Sources */,

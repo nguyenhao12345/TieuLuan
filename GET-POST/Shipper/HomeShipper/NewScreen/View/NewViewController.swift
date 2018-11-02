@@ -10,28 +10,28 @@ import UIKit
 
 class NewViewController: ViewController {
     @IBOutlet weak private var communicationTableView: UITableView!
+    fileprivate var presenter: NewViewControllerPresenter?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        let communicationNib = UINib(nibName: "CommunicationTableViewCell", bundle: nil)
-        communicationTableView.register(communicationNib, forCellReuseIdentifier: "communicationTableViewCell")
+        presenter = NewViewControllerPresenterImp()
+        presenter?.register(nibName: "CommunicationTableViewCell", forCellWithReuseIdentifier: "communicationTableViewCell", tableView: communicationTableView)
     }
 }
 
 extension NewViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return presenter?.numberOfRowsInSection() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let communicationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "communicationTableViewCell", for: indexPath) as? CommunicationTableViewCell else { return UITableViewCell()}
-        return communicationTableViewCell
+        return presenter?.cellForRowAt(tableView: tableView, cellForRowAt: indexPath) ?? UITableViewCell()
     }
 }
 
 extension NewViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return presenter?.heightForRowAt() ?? 0
     }
 }

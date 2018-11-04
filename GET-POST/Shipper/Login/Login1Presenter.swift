@@ -88,8 +88,10 @@ class Login1PresenterImp: Login1Presenter {
         return dic
     }
     func navigationPushHomeShop(data: DataUser, view: PushPopNavigation) {
-        let viewControllerMain = instantiate(HomeShop.self, storyboard: "HomeShop")
-        viewControllerMain.config(name: data.nameUser, img: data.image, phone: data.phonenumber, pass: data.pass)
+        let viewControllerMain = instantiate(TabBarHomeShop.self, storyboard: "TabBarHomeShop")
+        viewControllerMain.getDataAfterLoginOrSign(numberPhone: data.phonenumber)
+//        viewControllerMain.config(name: data.nameUser, img: data.image, phone: data.phonenumber, pass: data.pass)
+        
         view.pushVC(view: viewControllerMain)
     }
     func navigationPushHomeShipper(data: DataUser, view: PushPopNavigation) {

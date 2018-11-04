@@ -14,6 +14,16 @@
 		AA1BAC7C1DA26D5500204340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1BAC7A1DA26D5500204340 /* LaunchScreen.storyboard */; };
 		CC152FFA217F2CEB00B83816 /* Login1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC152FF9217F2CEB00B83816 /* Login1Presenter.swift */; };
 		CC152FFC2181048100B83816 /* ExtensionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC152FFB2181048100B83816 /* ExtensionCollection.swift */; };
+		CC3AF9ED218DA6E70059DAA2 /* TabBarHomeShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3AF9EC218DA6E70059DAA2 /* TabBarHomeShop.storyboard */; };
+		CC3AF9EF218DA7760059DAA2 /* TabBarHomeShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AF9EE218DA7760059DAA2 /* TabBarHomeShop.swift */; };
+		CC3AF9F1218DAA750059DAA2 /* CreateNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AF9F0218DAA750059DAA2 /* CreateNewsController.swift */; };
+		CC3AF9F3218DAA7D0059DAA2 /* CreateNewsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3AF9F2218DAA7D0059DAA2 /* CreateNewsController.storyboard */; };
+		CC3AF9F5218DAAAC0059DAA2 /* ListNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AF9F4218DAAAC0059DAA2 /* ListNewsController.swift */; };
+		CC3AF9F7218DAAB30059DAA2 /* ListNewsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3AF9F6218DAAB30059DAA2 /* ListNewsController.storyboard */; };
+		CC3AF9F9218DAAE50059DAA2 /* DetailShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AF9F8218DAAE50059DAA2 /* DetailShop.swift */; };
+		CC3AF9FB218DAAEF0059DAA2 /* DetailShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3AF9FA218DAAEF0059DAA2 /* DetailShop.storyboard */; };
+		CC3AF9FE218E4C4A0059DAA2 /* CreateNewsControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AF9FD218E4C4A0059DAA2 /* CreateNewsControllerPresenter.swift */; };
+		CC3AFA01218E6B430059DAA2 /* DetailShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AFA00218E6B430059DAA2 /* DetailShopPresenter.swift */; };
 		CC497618217A28C800878ED8 /* MyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC497617217A28C800878ED8 /* MyImage.swift */; };
 		CC49761A217B057A00878ED8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC497619217B057A00878ED8 /* API.swift */; };
 		CC49761C217B058400878ED8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC49761B217B058400878ED8 /* Service.swift */; };
@@ -66,6 +76,16 @@
 		AA1BAC7D1DA26D5500204340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC152FF9217F2CEB00B83816 /* Login1Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login1Presenter.swift; sourceTree = "<group>"; };
 		CC152FFB2181048100B83816 /* ExtensionCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCollection.swift; sourceTree = "<group>"; };
+		CC3AF9EC218DA6E70059DAA2 /* TabBarHomeShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarHomeShop.storyboard; sourceTree = "<group>"; };
+		CC3AF9EE218DA7760059DAA2 /* TabBarHomeShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHomeShop.swift; sourceTree = "<group>"; };
+		CC3AF9F0218DAA750059DAA2 /* CreateNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewsController.swift; sourceTree = "<group>"; };
+		CC3AF9F2218DAA7D0059DAA2 /* CreateNewsController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNewsController.storyboard; sourceTree = "<group>"; };
+		CC3AF9F4218DAAAC0059DAA2 /* ListNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNewsController.swift; sourceTree = "<group>"; };
+		CC3AF9F6218DAAB30059DAA2 /* ListNewsController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListNewsController.storyboard; sourceTree = "<group>"; };
+		CC3AF9F8218DAAE50059DAA2 /* DetailShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShop.swift; sourceTree = "<group>"; };
+		CC3AF9FA218DAAEF0059DAA2 /* DetailShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailShop.storyboard; sourceTree = "<group>"; };
+		CC3AF9FD218E4C4A0059DAA2 /* CreateNewsControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewsControllerPresenter.swift; sourceTree = "<group>"; };
+		CC3AFA00218E6B430059DAA2 /* DetailShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShopPresenter.swift; sourceTree = "<group>"; };
 		CC497617217A28C800878ED8 /* MyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImage.swift; sourceTree = "<group>"; };
 		CC497619217B057A00878ED8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CC49761B217B058400878ED8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -165,6 +185,25 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		CC3AF9FC218E4C1A0059DAA2 /* CreateNewsItem */ = {
+			isa = PBXGroup;
+			children = (
+				CC3AF9F2218DAA7D0059DAA2 /* CreateNewsController.storyboard */,
+				CC3AF9F0218DAA750059DAA2 /* CreateNewsController.swift */,
+				CC3AF9FD218E4C4A0059DAA2 /* CreateNewsControllerPresenter.swift */,
+			);
+			path = CreateNewsItem;
+			sourceTree = "<group>";
+		};
+		CC3AF9FF218E69150059DAA2 /* DetailShop */ = {
+			isa = PBXGroup;
+			children = (
+				CC3AF9F8218DAAE50059DAA2 /* DetailShop.swift */,
+				CC3AFA00218E6B430059DAA2 /* DetailShopPresenter.swift */,
+			);
+			path = DetailShop;
+			sourceTree = "<group>";
+		};
 		CC6794192186AB45006DAF34 /* PHP */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,11 +276,18 @@
 		CCCC11482184C87700C30010 /* HomeShop */ = {
 			isa = PBXGroup;
 			children = (
+				CC3AF9FF218E69150059DAA2 /* DetailShop */,
+				CC3AF9FC218E4C1A0059DAA2 /* CreateNewsItem */,
 				CC763B2D217C47F200717AB8 /* HomeShop.storyboard */,
 				CC763B2F217C481200717AB8 /* HomeShop.swift */,
 				CCCC11492184CAF800C30010 /* HomeShopPresenter.swift */,
 				CC83202921865C23007F72FD /* Cell.xib */,
 				CC5146A32187A3DA000E4942 /* TextFieldCustom.swift */,
+				CC3AF9EC218DA6E70059DAA2 /* TabBarHomeShop.storyboard */,
+				CC3AF9EE218DA7760059DAA2 /* TabBarHomeShop.swift */,
+				CC3AF9F4218DAAAC0059DAA2 /* ListNewsController.swift */,
+				CC3AF9FA218DAAEF0059DAA2 /* DetailShop.storyboard */,
+				CC3AF9F6218DAAB30059DAA2 /* ListNewsController.storyboard */,
 			);
 			path = HomeShop;
 			sourceTree = "<group>";
@@ -413,6 +459,7 @@
 				CC763B20217C19FF00717AB8 /* Login.storyboard in Resources */,
 				CC67941F2186AB75006DAF34 /* Login_User.php in Resources */,
 				CC6794232186AB75006DAF34 /* SignUser.php in Resources */,
+				CC3AF9F7218DAAB30059DAA2 /* ListNewsController.storyboard in Resources */,
 				CC6794222186AB75006DAF34 /* getDataLogined.php in Resources */,
 				CC83202A21865C23007F72FD /* Cell.xib in Resources */,
 				DAFC39A92189506000E02B9B /* NewViewController.storyboard in Resources */,
@@ -420,15 +467,18 @@
 				DAFC39B02189621E00E02B9B /* CommunicationTableViewCell.xib in Resources */,
 				CCAF150621839C270038A80A /* HomeShipper.storyboard in Resources */,
 				CC763B26217C34A900717AB8 /* Sign1.storyboard in Resources */,
+				CC3AF9F3218DAA7D0059DAA2 /* CreateNewsController.storyboard in Resources */,
 				AA1BAC791DA26D5500204340 /* Assets.xcassets in Resources */,
 				CC763B24217C339B00717AB8 /* Login2.storyboard in Resources */,
 				AA1BAC771DA26D5500204340 /* Main.storyboard in Resources */,
 				DAFC399B21894FB300E02B9B /* StorageViewController.storyboard in Resources */,
 				DAFC39A02189500000E02B9B /* CreateViewController.storyboard in Resources */,
+				CC3AF9ED218DA6E70059DAA2 /* TabBarHomeShop.storyboard in Resources */,
 				CC763B22217C233800717AB8 /* Login1.storyboard in Resources */,
 				DAFC39A42189502200E02B9B /* AccountViewController.storyboard in Resources */,
 				CC6794212186AB75006DAF34 /* AddItemOfShop.php in Resources */,
 				CC763B2E217C47F200717AB8 /* HomeShop.storyboard in Resources */,
+				CC3AF9FB218DAAEF0059DAA2 /* DetailShop.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,27 +489,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC3AF9F5218DAAAC0059DAA2 /* ListNewsController.swift in Sources */,
 				CCAF150821839C4F0038A80A /* HomeShipper.swift in Sources */,
 				DAFC39A22189501800E02B9B /* AccountViewController.swift in Sources */,
 				CCDCAD4F217EE81C00699665 /* Sign1Presenter.swift in Sources */,
 				AA1BAC741DA26D5500204340 /* ViewController.swift in Sources */,
+				CC3AF9EF218DA7760059DAA2 /* TabBarHomeShop.swift in Sources */,
 				CCCC114A2184CAF800C30010 /* HomeShopPresenter.swift in Sources */,
 				CC763B2C217C476800717AB8 /* Sign1.swift in Sources */,
 				DAFC39A72189505800E02B9B /* NewViewController.swift in Sources */,
 				CC763B30217C481200717AB8 /* HomeShop.swift in Sources */,
+				CC3AF9FE218E4C4A0059DAA2 /* CreateNewsControllerPresenter.swift in Sources */,
 				CC67942521877E92006DAF34 /* ExtensionAnimationUIbutton.swift in Sources */,
 				CC152FFC2181048100B83816 /* ExtensionCollection.swift in Sources */,
 				CC497618217A28C800878ED8 /* MyImage.swift in Sources */,
 				DAFC399921894F8B00E02B9B /* StorageViewController.swift in Sources */,
+				CC3AFA01218E6B430059DAA2 /* DetailShopPresenter.swift in Sources */,
 				DAEDB3A5218C5D9F00B8F0D8 /* HomeShiperPresenter.swift in Sources */,
 				CC763B32217E2A6800717AB8 /* LoadImage.swift in Sources */,
 				DA4C18602189F3D3007DDA46 /* ModelNewView.swift in Sources */,
+				CC3AF9F1218DAA750059DAA2 /* CreateNewsController.swift in Sources */,
 				CC152FFA217F2CEB00B83816 /* Login1Presenter.swift in Sources */,
 				DAFC399E21894FDF00E02B9B /* CreateViewController.swift in Sources */,
 				CC763B2A217C475300717AB8 /* Login2.swift in Sources */,
 				DAFC39AE218961E100E02B9B /* CommunicationTableViewCell.swift in Sources */,
 				CC49761C217B058400878ED8 /* Service.swift in Sources */,
 				DA4C185D2189E892007DDA46 /* NewViewControllerPresenter.swift in Sources */,
+				CC3AF9F9218DAAE50059DAA2 /* DetailShop.swift in Sources */,
 				DAEDB3A8218C863300B8F0D8 /* ModelTabBarItemScreenShiper.swift in Sources */,
 				CC763B28217C474400717AB8 /* Login1.swift in Sources */,
 				CC49761E217B07A100878ED8 /* ViewControllerPresenter.swift in Sources */,

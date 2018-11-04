@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func check() {
         if UserDefaults.standard.value(forKey: "phoneNumber") != nil {
             if  UserDefaults.standard.value(forKey: "typeAccount") as? String ?? "" == "Shop"{
-                let vc = UIStoryboard(name: "HomeShop", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeShop")
+                let vc = UIStoryboard(name: "TabBarHomeShop", bundle: Bundle.main).instantiateViewController(withIdentifier: "TabBarHomeShop")
                 let navVC = UINavigationController(rootViewController: vc)
                 navVC.navigationController?.isToolbarHidden = true
                 let share = UIApplication.shared.delegate as? AppDelegate

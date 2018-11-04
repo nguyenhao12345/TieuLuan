@@ -50,6 +50,7 @@
 		CCAF150821839C4F0038A80A /* HomeShipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF150721839C4F0038A80A /* HomeShipper.swift */; };
 		CCCC114A2184CAF800C30010 /* HomeShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC11492184CAF800C30010 /* HomeShopPresenter.swift */; };
 		CCDCAD4F217EE81C00699665 /* Sign1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */; };
+		CCEBC028218EA54800CDA75D /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBC027218EA54800CDA75D /* CustomTabBar.swift */; };
 		DA4C185D2189E892007DDA46 /* NewViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C185C2189E892007DDA46 /* NewViewControllerPresenter.swift */; };
 		DA4C18602189F3D3007DDA46 /* ModelNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C185F2189F3D3007DDA46 /* ModelNewView.swift */; };
 		DAEDB3A5218C5D9F00B8F0D8 /* HomeShiperPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEDB3A4218C5D9F00B8F0D8 /* HomeShiperPresenter.swift */; };
@@ -112,6 +113,7 @@
 		CCAF150721839C4F0038A80A /* HomeShipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShipper.swift; sourceTree = "<group>"; };
 		CCCC11492184CAF800C30010 /* HomeShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShopPresenter.swift; sourceTree = "<group>"; };
 		CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign1Presenter.swift; sourceTree = "<group>"; };
+		CCEBC027218EA54800CDA75D /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		DA4C185C2189E892007DDA46 /* NewViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewControllerPresenter.swift; sourceTree = "<group>"; };
 		DA4C185F2189F3D3007DDA46 /* ModelNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNewView.swift; sourceTree = "<group>"; };
 		DAEDB3A4218C5D9F00B8F0D8 /* HomeShiperPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShiperPresenter.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				CC3AF9F8218DAAE50059DAA2 /* DetailShop.swift */,
+				CC3AF9FA218DAAEF0059DAA2 /* DetailShop.storyboard */,
 				CC3AFA00218E6B430059DAA2 /* DetailShopPresenter.swift */,
 			);
 			path = DetailShop;
@@ -276,6 +279,7 @@
 		CCCC11482184C87700C30010 /* HomeShop */ = {
 			isa = PBXGroup;
 			children = (
+				CCEBC029218EB32D00CDA75D /* ListNews */,
 				CC3AF9FF218E69150059DAA2 /* DetailShop */,
 				CC3AF9FC218E4C1A0059DAA2 /* CreateNewsItem */,
 				CC763B2D217C47F200717AB8 /* HomeShop.storyboard */,
@@ -285,11 +289,18 @@
 				CC5146A32187A3DA000E4942 /* TextFieldCustom.swift */,
 				CC3AF9EC218DA6E70059DAA2 /* TabBarHomeShop.storyboard */,
 				CC3AF9EE218DA7760059DAA2 /* TabBarHomeShop.swift */,
-				CC3AF9F4218DAAAC0059DAA2 /* ListNewsController.swift */,
-				CC3AF9FA218DAAEF0059DAA2 /* DetailShop.storyboard */,
-				CC3AF9F6218DAAB30059DAA2 /* ListNewsController.storyboard */,
+				CCEBC027218EA54800CDA75D /* CustomTabBar.swift */,
 			);
 			path = HomeShop;
+			sourceTree = "<group>";
+		};
+		CCEBC029218EB32D00CDA75D /* ListNews */ = {
+			isa = PBXGroup;
+			children = (
+				CC3AF9F4218DAAAC0059DAA2 /* ListNewsController.swift */,
+				CC3AF9F6218DAAB30059DAA2 /* ListNewsController.storyboard */,
+			);
+			path = ListNews;
 			sourceTree = "<group>";
 		};
 		DA4C185B2189E873007DDA46 /* Presenter */ = {
@@ -505,6 +516,7 @@
 				CC497618217A28C800878ED8 /* MyImage.swift in Sources */,
 				DAFC399921894F8B00E02B9B /* StorageViewController.swift in Sources */,
 				CC3AFA01218E6B430059DAA2 /* DetailShopPresenter.swift in Sources */,
+				CCEBC028218EA54800CDA75D /* CustomTabBar.swift in Sources */,
 				DAEDB3A5218C5D9F00B8F0D8 /* HomeShiperPresenter.swift in Sources */,
 				CC763B32217E2A6800717AB8 /* LoadImage.swift in Sources */,
 				DA4C18602189F3D3007DDA46 /* ModelNewView.swift in Sources */,

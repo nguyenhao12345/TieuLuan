@@ -91,7 +91,7 @@ class Login1PresenterImp: Login1Presenter {
         let viewControllerMain = instantiate(TabBarHomeShop.self, storyboard: "TabBarHomeShop")
         viewControllerMain.getDataAfterLoginOrSign(numberPhone: data.phonenumber)
 //        viewControllerMain.config(name: data.nameUser, img: data.image, phone: data.phonenumber, pass: data.pass)
-        
+//        view.present(view: viewControllerMain)
         view.pushVC(view: viewControllerMain)
     }
     func navigationPushHomeShipper(data: DataUser, view: PushPopNavigation) {

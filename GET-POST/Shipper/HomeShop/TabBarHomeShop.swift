@@ -21,6 +21,7 @@ class TabBarHomeShop: UITabBarController {
         super.viewDidLoad()
         
         setupTabBar()
+        self.navigationController?.isNavigationBarHidden = true
      
     }
     private var numberPhone: String = ""

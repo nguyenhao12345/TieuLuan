@@ -8,45 +8,36 @@
 
 import UIKit
 
-class Sign1: UIViewController{
+class Sign1: UIViewController {
     
-    @IBOutlet weak var activitySign1: UIActivityIndicatorView!
-    @IBOutlet weak var typeUser: UITextField!
-    @IBOutlet weak var firstAndLastName: UITextField!
-    //    @IBOutlet weak var textFieldDay: UITextField!
-    @IBOutlet weak var btnSign: UIButton!
-    @IBOutlet weak var mesError: UILabel!
-    @IBOutlet weak var username: UITextField!           //phone
-    @IBOutlet weak var passwd: UITextField!
-    @IBOutlet weak var repasswd: UITextField!
-    @IBOutlet weak var image: UIImageView!
-    var presenter: Sign1Presenter?
-    @IBAction func clickSign(_ sender: Any) {
-        presenter?.clickSign(image: self, userName: username.text ?? "" , passWd: passwd.text ?? "" , repasswd: repasswd.text ?? "",firstAndLastName: firstAndLastName.text ?? "",typeUser: typeUser.text ?? "", view: self, updateLable: self, updateUIButton: self)
-        btnSign.flash()
-        btnSign.pulsate()
+    @IBOutlet fileprivate weak var activitySign1:    UIActivityIndicatorView!
+    @IBOutlet fileprivate weak var typeUser:         UITextField!
+    @IBOutlet fileprivate weak var firstAndLastName: UITextField!
+    @IBOutlet fileprivate weak var btnSign:          UIButton!
+    @IBOutlet fileprivate weak var mesError:         UILabel!
+    @IBOutlet fileprivate weak var username:         UITextField!           //phone
+    @IBOutlet fileprivate weak var passwd:           UITextField!
+    @IBOutlet fileprivate weak var repasswd:         UITextField!
+    @IBOutlet fileprivate weak var image:            UIImageView!
+    
+    fileprivate var presenter: Sign1Presenter?
+    
+    @IBAction private func clickSign(_ sender: Any) {
+        presenter?.clickSign(image: self, userName: username.text ?? "", passWd: passwd.text ?? "", repasswd: repasswd.text ?? "", firstAndLastName: firstAndLastName.text ?? "", typeUser: typeUser.text ?? "", view: self, updateLable: self, updateUIButton: self)
+   
     }
-    @IBAction func clickCamera(_ sender: Any) {
+    @IBAction private func clickCamera(_ sender: Any) {
         presenter?.clickCamera(view: self)
     }
-    @IBAction func clickBack(_ sender: Any) {
-        //        presenter?.clickBack(view: self)
+    @IBAction private func clickBack(_ sender: Any) {
         if let composeViewController = self.navigationController?.viewControllers[0] {
             self.navigationController?.popToViewController(composeViewController, animated: true)
         }
     }
-    enum TypeUser: String {
-        case Shop = "Shop"
-        case Shipper = "Shipper"
-        var result: String {
-            return self.rawValue
-        }
-    }
-    let picker = UIPickerView()
-    var dataTypeUser: [TypeUser] = [.Shop, .Shipper]
+    private let picker = UIPickerView()
+    fileprivate var dataTypeUser: [TypeUser] = [.Shop, .Shipper]
 
-    func createPickerView()
-    {
+    private func createPickerView() {
         picker.delegate = self
         picker.delegate?.pickerView?(picker, didSelectRow: 0, inComponent: 0)
         typeUser.inputView = picker
@@ -55,19 +46,12 @@ class Sign1: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
         presenter = Sign1PresenterImp()
         createPickerView()
- 
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
 }
@@ -79,27 +63,27 @@ extension Sign1: UIImagePickerControllerDelegate {
         presenter?.imagePickerControllerDidCancel(picker)
     }
 }
-extension Sign1: UINavigationControllerDelegate {
-}
+extension Sign1: UINavigationControllerDelegate {}
 
 extension Sign1: UpdateUI {
-    func enabledButton() { // bật lại đc bấm
+    func enabledButton() {
         btnSign.isEnabled = true
         activitySign1.stopAnimating()
     }
     
-    func updataConstrain(numberConstrain: Int) {
-        
-    }
+    func updataConstrain(numberConstrain: Int) {}
     
     func updataUIImagePicker(image: UIImage) {
         self.image.image = image
     }
 
-    func updataUIButton() {
+    func disableUIButton() {
         activitySign1.startAnimating()
         btnSign.isEnabled = false
         btnSign.isHighlighted = true
+        
+        btnSign.flash()
+        btnSign.pulsate()
     }
     func updateUILableError(lable: String)  {
         mesError.text = lable
@@ -136,6 +120,7 @@ extension Sign1: UITextFieldDelegate {
     }
 }
 extension Sign1 : UIPickerViewDataSource {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -143,20 +128,18 @@ extension Sign1 : UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return dataTypeUser.count
     }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
-    {
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return dataTypeUser[row].rawValue
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         typeUser.text =  dataTypeUser[row].rawValue
     }
+    
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 30
     }
-    
-    
 }
-extension Sign1 : UIPickerViewDelegate {
-    
-}
+extension Sign1 : UIPickerViewDelegate {}
+

@@ -14,9 +14,6 @@ protocol HomeShopPresenter {
     func clickLoutout(view: PushPopNavigation)
     func clickPostItem(startPoint: String , lastPoint: String, price: String , content: String, phonenumber: String, mesError: UpdateUI, view: PushPopNavigation, constrain: UpdateUIHomeShop, updateUIAfterSuccess: UpdateUIHomeShop)
 }
-protocol HomeShopPresenterDelegate {
-    func printData()
-}
 
 class HomeShopPresenterImp: HomeShopPresenter {
     private let postData = Service()
@@ -62,10 +59,6 @@ class HomeShopPresenterImp: HomeShopPresenter {
             view.present(view: alert)
         }
     }
-    enum LoginResult {
-        case error(message: String)
-        case success(message: String)
-    }
     
     func postItem(startPoint: String, lastPoint: String, price: String, content: String, phonenumber: String, completion: @escaping (LoginResult) -> ()) {
          let dictionary = makeParameter(startPoint: startPoint, lastPoint: lastPoint, price: price, content: content, phonenumber: phonenumber)
@@ -75,7 +68,7 @@ class HomeShopPresenterImp: HomeShopPresenter {
                 completion(LoginResult.error(message: "Vui lòng xem lại kết nối mạng"))
             }
             if errOr == "thanh cong"  {
-                completion(LoginResult.success(message: "Bài viết của bạn đã được đăng vào news của Shipper"))
+                completion(LoginResult.success(data: "Bài viết của bạn đã được đăng vào news của Shipper"))
                 
             }
         }
@@ -114,5 +107,5 @@ class HomeShopPresenterImp: HomeShopPresenter {
             view3_Image.updateUIImageAvata(nameImg: user.image)
         }
     }
-    var delegate: HomeShopPresenterDelegate?
+    
 }

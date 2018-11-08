@@ -6,7 +6,6 @@
 //  Copyright © 2018 datnguyen. All rights reserved.
 //
 
-
 import UIKit
 import MapKit
 import CoreLocation
@@ -18,10 +17,20 @@ protocol CreateNewsControllerPresenter {
     func clickSwitchMapTypeSegmented(_ sender: UISegmentedControl, mapview: UpdataMapView)
     func createSearchBar(placeholder: PlaceholderTextField, delegate: UISearchBarDelegate) -> UISearchController
     func createPointAnnotation(latitude: CLLocationDegrees,longitude: CLLocationDegrees, titleAnnotation: String) -> MKPointAnnotation
-     func finishedSearchBar(_ searchBar: UISearchBar, mapview: UpdataMapView,complete: @escaping (String) -> ())
+    func finishedSearchBar(_ searchBar: UISearchBar, mapview: UpdataMapView,complete: @escaping (String) -> ())
+    func changeColorLable(hexColor: String, updateLable: UpdateUILableCreateNews)
 }
 
 class CreateNewsControllerImp: CreateNewsControllerPresenter {
+    func changeColorLable(hexColor: String, updateLable: UpdateUILableCreateNews) {
+        updateLable.updateTextColorLable(nameColor: hexColor)
+    }
+    
+    private var numberPhone: String = ""
+    
+    init(string: String) {
+        numberPhone = string
+    }
     
     func createSearchBar(placeholder: PlaceholderTextField, delegate: UISearchBarDelegate) -> UISearchController {
         let searchController = UISearchController(searchResultsController: nil)
@@ -31,21 +40,17 @@ class CreateNewsControllerImp: CreateNewsControllerPresenter {
         return searchController
     }
     
-    
-    
     private let postData = Service()
-    var numberPhone: String = ""
+    
     var longitude: String = ""
     var latitude: String = ""
-    func getDataAfterLogin(phone: String) {
-        numberPhone = phone
-    }
+    
     func actionUIAlert(titleAlert: String,titleAddAction: String, mesage: String, view: PushPopNavigation) {
         let alert = UIAlertController(title: titleAlert, message: mesage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: titleAddAction, style: .default, handler: nil))
         view.present(view: alert)
     }
-    func clickButtonPostItem(startPoint: String, lastPoint: String, price: String, content: String,  view: PushPopNavigation, updateUIAfterSuccess: UpdateUICreateNewsController) {
+    func clickButtonPostItem(startPoint: String, lastPoint: String, price: String, content: String, view: PushPopNavigation, updateUIAfterSuccess: UpdateUICreateNewsController) {
         let errMess = checkFullInfo(startPoint: startPoint, lastPoint: lastPoint, price: price, content: content)
         if errMess == nil {
             postItem(startPoint: startPoint, lastPoint: lastPoint, price: price, content: content) {
@@ -67,10 +72,7 @@ class CreateNewsControllerImp: CreateNewsControllerPresenter {
             actionUIAlert(titleAlert: "Thất bại", titleAddAction: "Ok", mesage: errMess ?? "", view: view)
         }
     }
-    enum LoginResult {
-        case error(message: String)
-        case success(message: String)
-    }
+    
     func getTime() -> String {
         let formatter = DateFormatter()
         let currentDateTime = Date()
@@ -88,14 +90,14 @@ class CreateNewsControllerImp: CreateNewsControllerPresenter {
         }
     }
     func postItem(startPoint: String, lastPoint: String, price: String, content: String, completion: @escaping (LoginResult) -> ()) {
-        let dictionary = makeParameter(startPoint: startPoint, lastPoint: lastPoint, price: price, content: content, phonenumber: UserDefaults.standard.object(forKey: "phoneNumber") as? String ?? "", timeOfPost: getTime())
+        let dictionary = makeParameter(startPoint: startPoint, lastPoint: lastPoint, price: price, content: content, phonenumber: numberPhone, timeOfPost: getTime())
         postData.loadData(urlString: API.postItemOfShop, method: HTTPMethod.post, dic: dictionary) { (object) in
             let errOr = object as? String ?? ""
             if errOr == "k ket noi dc" {
                 completion(LoginResult.error(message: "Vui lòng xem lại kết nối mạng"))
             }
             if errOr == "thanh cong"  {
-                completion(LoginResult.success(message: "Bài viết của bạn đã được đăng vào news của Shipper"))
+                completion(LoginResult.success(data: "Bài viết của bạn đã được đăng vào news của Shipper"))
             }
         }
     }
@@ -145,7 +147,7 @@ class CreateNewsControllerImp: CreateNewsControllerPresenter {
             let country = placemark.country ?? ""
             
             DispatchQueue.main.async {
-                    complete("\(streetNumber) , \(streetName) , \(ward) , \(district) , \(city) \(country)")
+                complete("\(streetNumber) , \(streetName) , \(ward) , \(district) , \(city) \(country)")
             }
         }
     }
@@ -155,7 +157,7 @@ class CreateNewsControllerImp: CreateNewsControllerPresenter {
         
         //Hide search bar
         searchBar.resignFirstResponder()
-//        dismiss(animated: true, completion: nil)
+        //        dismiss(animated: true, completion: nil)
         
         //Create the search request
         let searchRequest = MKLocalSearchRequest()
@@ -169,9 +171,9 @@ class CreateNewsControllerImp: CreateNewsControllerPresenter {
             guard let strongSelf = self, response != nil else { return }
             //mapLocation to TextField
             strongSelf.mapDataFromSearchBarToTextField(latitude:  response?.boundingRegion.center.latitude ?? 123, longitude: response?.boundingRegion.center.longitude ?? 123, searchBar: searchBar, complete: { (address) in
-                    complete(address)
+                complete(address)
             })
-           
+            
             //Remove annotations
             
             let annotations = mapview.createAnnotation()
@@ -180,6 +182,9 @@ class CreateNewsControllerImp: CreateNewsControllerPresenter {
             
             strongSelf.longitude = response?.boundingRegion.center.longitude as? String ?? ""
             strongSelf.latitude = response?.boundingRegion.center.latitude as? String ?? ""
+            
+            print(response?.boundingRegion.center.longitude)
+            print(response?.boundingRegion.center.latitude)
             let pointAnnotation = strongSelf.createPointAnnotation(latitude: response?.boundingRegion.center.latitude ?? 123, longitude: response?.boundingRegion.center.longitude ?? 123, titleAnnotation: searchBar.text ?? "")
             mapview.mapView(addAnnotation: pointAnnotation)
             
@@ -201,7 +206,7 @@ class CreateNewsControllerImp: CreateNewsControllerPresenter {
         
         return annotation
     }
-
+    
     func setupLocationManager() {
         locationManager.delegate = self as? CLLocationManagerDelegate
         locationManager.desiredAccuracy = kCLLocationAccuracyBest

@@ -10,8 +10,9 @@
 import UIKit
 
 class CustomTabBar : UITabBar {
-    @IBInspectable var height: CGFloat = 0.0
+    @IBInspectable var height: CGFloat = UIScreen.main.bounds.height / 10
     
+
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         var sizeThatFits = super.sizeThatFits(size)
         if height > 0.0 {

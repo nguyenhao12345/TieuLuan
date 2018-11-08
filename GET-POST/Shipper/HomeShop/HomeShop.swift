@@ -46,7 +46,7 @@ extension HomeShop: UpdateUI {
     func setUIImage() -> UIImage? {
         return UIImage()
     }
-    func updataUIButton() {}
+    func disableUIButton() {}
     func updataUIImagePicker(image: UIImage) {}
 }
 protocol UpdateUIHomeShop {

@@ -11,44 +11,39 @@ import MapKit
 import CoreLocation
 
 class CreateNewsController: UIViewController, UISearchBarDelegate {
+    fileprivate let greenColorCustom = "4EFF45"
+    fileprivate let redColorCustom   = "FF1320"
     
     @IBOutlet weak fileprivate var mapViewShop:             MKMapView!
-    
-    
+
     @IBOutlet weak fileprivate var viewInfoPostItem:        UIView!
-    
     @IBOutlet weak fileprivate var startPointTextField:     UITextField!
-    
     @IBOutlet weak fileprivate var finishPointTextField:    UITextField!
-    
     @IBOutlet weak fileprivate var contentTextField:        UITextField!
-    
     @IBOutlet weak fileprivate var priceTextField:          UITextField!
-    
     @IBOutlet weak fileprivate var prepayTextField:         UITextField!
     
+    @IBOutlet weak fileprivate var lblInfoPostItem: UILabel!
+    @IBOutlet weak fileprivate var lblVNDprice: UILabel!
+    @IBOutlet weak fileprivate var lblVNDadvance: UILabel!
     
     @IBOutlet weak fileprivate var viewPostItems:           UIView!
-    
     @IBOutlet weak fileprivate var PostItemButton:          UIButton!
-    
     @IBOutlet weak fileprivate var cancelPostItemButton:    UIButton!
     
-    
     @IBOutlet weak fileprivate var createItemButton:        UIButton!
-    
     @IBOutlet weak fileprivate var switchMapType:           UISegmentedControl!
     
-    @IBAction func tapstartPointTextField(_ sender: Any) {
+    @IBAction private func tapstartPointTextField(_ sender: Any) {
         guard let searchController = presenter?.createSearchBar(placeholder: .LocationShipperGetItem, delegate: self) else {return}
         present(searchController, animated: true, completion: nil)
     }
     
-    @IBAction func tapfinishPointTextField(_ sender: Any) {
+    @IBAction private func tapfinishPointTextField(_ sender: Any) {
         guard let searchController =  presenter?.createSearchBar(placeholder: .LocationShipperSendItem, delegate: self) else {return}
         present(searchController, animated: true, completion: nil)
     }
-    @IBAction fileprivate func clickButtonPostItem(_ sender: Any) {
+    @IBAction private func clickButtonPostItem(_ sender: Any) {
         presenter?.clickButtonPostItem(startPoint: startPointTextField.text ?? "",
                                        lastPoint: finishPointTextField.text ?? "",
                                        price: priceTextField.text ?? "",
@@ -56,7 +51,6 @@ class CreateNewsController: UIViewController, UISearchBarDelegate {
                                        view: self,
                                        updateUIAfterSuccess: self)
     }
-    
     @IBAction fileprivate func clickButtonCancelPostItem(_ sender: Any) {
         viewPostItems.isHidden    = true
         viewInfoPostItem.isHidden = true
@@ -73,24 +67,25 @@ class CreateNewsController: UIViewController, UISearchBarDelegate {
         presenter?.clickSwitchMapTypeSegmented(sender, mapview: self)
     }
     
-    var presenter: CreateNewsControllerPresenter?
-    
+    fileprivate var presenter: CreateNewsControllerPresenter?
+    func inject(presenter: CreateNewsControllerPresenter) {
+        self.presenter = presenter
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapViewShop.delegate = self
+        mapViewShop.delegate      = self
         presenter?.checkLocationServices(mapview: self)
         
         viewPostItems.isHidden    = true
         viewInfoPostItem.isHidden = true
     }
     
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    private func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         presenter?.finishedSearchBar(searchBar, mapview: self, complete: { (address) in
             switch searchBar.placeholder {
             case PlaceholderTextField.LocationShipperGetItem.rawValue:
-                self.startPointTextField.text = address
+                self.startPointTextField.text  = address
             case PlaceholderTextField.LocationShipperSendItem.rawValue:
                 self.finishPointTextField.text = address
             case .none:
@@ -100,12 +95,11 @@ class CreateNewsController: UIViewController, UISearchBarDelegate {
             }
         })
     }
+
 }
 
-
-
 extension CreateNewsController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    private func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         presenter?.checkLocationAuthorization(mapview: self)
     }
 }
@@ -115,6 +109,18 @@ extension CreateNewsController: MKMapViewDelegate {
         view.endEditing(true)
     }
 }
+
+protocol UpdateUILableCreateNews {
+    func updateTextColorLable(nameColor: String)
+}
+extension CreateNewsController: UpdateUILableCreateNews {
+    func updateTextColorLable(nameColor: String) {
+        lblInfoPostItem.textColor = hexStringToUIColor(hex: nameColor)
+        lblVNDprice.textColor     = hexStringToUIColor(hex: nameColor)
+        lblVNDadvance.textColor   = hexStringToUIColor(hex: nameColor)
+    }
+}
+
 protocol UpdataMapView {
     func setRegion(region: MKCoordinateRegion)
     func showsUserLocation()
@@ -125,6 +131,7 @@ protocol UpdataMapView {
     func createAnnotation() -> [MKAnnotation]
 }
 extension CreateNewsController: UpdataMapView {
+    
     func createAnnotation() -> [MKAnnotation] {
         return mapViewShop.annotations
     }
@@ -136,12 +143,17 @@ extension CreateNewsController: UpdataMapView {
     func mapView(addAnnotation: MKAnnotation) {
         mapViewShop.addAnnotation(addAnnotation)
     }
+    
     func getMapType(nameType: MKMapType) {
         switch nameType {
         case .standard:
-            mapViewShop.mapType = .standard
+            presenter?.changeColorLable(hexColor: "FF1320", updateLable: self)
+            mapViewShop.mapType       = .standard
+            switchMapType.tintColor   = hexStringToUIColor(hex: redColorCustom)
         case .satellite:
-            mapViewShop.mapType = .satellite
+            presenter?.changeColorLable(hexColor: "4EFF45", updateLable: self)
+            mapViewShop.mapType       = .satellite
+            switchMapType.tintColor   = hexStringToUIColor(hex: greenColorCustom)
         case .hybrid:
             mapViewShop.mapType = .hybrid
         case .satelliteFlyover:
@@ -149,12 +161,11 @@ extension CreateNewsController: UpdataMapView {
         case .hybridFlyover:
             mapViewShop.mapType = .hybridFlyover
         case .mutedStandard:
-            if #available(iOS 11.0, *) {
-                mapViewShop.mapType = .mutedStandard
-            } else {
-            }
+            if #available(iOS 11.0, *) { mapViewShop.mapType = .mutedStandard }
+            else {}
         }
     }
+    
     func getCenterLocation() -> CLLocation {
         let latitude = mapViewShop.centerCoordinate.latitude
         let longitude = mapViewShop.centerCoordinate.longitude
@@ -169,15 +180,9 @@ extension CreateNewsController: UpdataMapView {
         mapViewShop.setRegion(region, animated: true)
     }
 }
+
 protocol UpdateUICreateNewsController {
     func updateUIAfterPostItemSucess()
-}
-extension CreateNewsController: PushPopNavigation {
-    func pushVC(view: UIViewController) {}
-    func popVC(view: UIViewController) {}
-    func present(view: UIViewController) {
-        present(view, animated: true)
-    }
 }
 extension CreateNewsController: UpdateUICreateNewsController {
     func updateUIAfterPostItemSucess() {
@@ -186,3 +191,10 @@ extension CreateNewsController: UpdateUICreateNewsController {
     }
 }
 
+extension CreateNewsController: PushPopNavigation {
+    func pushVC(view: UIViewController) {}
+    func popVC(view: UIViewController) {}
+    func present(view: UIViewController) {
+        present(view, animated: true)
+    }
+}

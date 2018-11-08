@@ -16,51 +16,38 @@ protocol PushPopNavigation {
 
 class Login1: UIViewController {
     
-    @IBOutlet weak var btnLogin: UIButton!
-    @IBOutlet weak var activityLoad: UIActivityIndicatorView!
-    @IBOutlet weak var mesError: UILabel!
-    @IBOutlet private weak var passwd: UITextField!
-    @IBOutlet private weak var username: UITextField!
-    var presenter : Login1Presenter?
-    var istouch = false
+    @IBOutlet fileprivate weak var btnLogin:     UIButton!
+    @IBOutlet fileprivate weak var activityLoad: UIActivityIndicatorView!
+    @IBOutlet fileprivate weak var mesError:     UILabel!
+    @IBOutlet fileprivate weak var passwd:       UITextField!
+    @IBOutlet fileprivate weak var username:     UITextField!
+    
+    private var presenter : Login1Presenter?
+    
     @IBAction private func clickLoggin(_ sender: Any) {
-        presenter?.clickLogin(userName: username.text ?? "", passWd: passwd.text ?? "", view: self, updateLable: self,buttonLogin: self)
+        presenter?.clickLogin(userName: username.text ?? "", passWd: passwd.text ?? "", view: self, updateLable: self, buttonLogin: self)
         btnLogin.shake()
     }
-
+    
     @IBAction private func clickSign(_ sender: Any) {
         presenter?.clickSign(view: self)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = Login1PresenterImp()
-        let homeShop = HomeShopPresenterImp()
-        guard  let presenterExport = presenter as? HomeShopPresenterDelegate  else {
-            return
-        }
-        homeShop.delegate = presenterExport
-
-        //self.navigationController?.isNavigationBarHidden = true
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        //self.navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
 }
 
 extension Login1: PushPopNavigation {
-    func popVC(view: UIViewController) {
-        
-    }
+    func popVC(view: UIViewController) {}
     
-    func present(view: UIViewController) {
-        
-    }
+    func present(view: UIViewController) {}
     
     func pushVC(view: UIViewController) {
         activityLoad.stopAnimating()
@@ -73,31 +60,34 @@ extension Login1: PushPopNavigation {
     }
 }
 
+
 protocol UpdateUI {
     func updateUILableError(lable: String)
     func setUIImage() -> UIImage?
-    func updataUIButton()
+    func disableUIButton()
     func enabledButton()
     func updataUIImagePicker(image: UIImage)
-   
-  
 }
-extension Login1: UpdateUI {
 
-   func updataUIImagePicker(image: UIImage) {
-    }
-    func updataUIButton() { //disable btn
+extension Login1: UpdateUI {
+    
+    func updataUIImagePicker(image: UIImage) {}
+    
+    func disableUIButton() {
         activityLoad.startAnimating()
-        btnLogin.isEnabled = false
+        btnLogin.isEnabled     = false
         btnLogin.isHighlighted = true
     }
-    func enabledButton() { // bật lại đc bấm
-        btnLogin.isEnabled = true
+    
+    func enabledButton() {
+        btnLogin.isEnabled     = true
         activityLoad.stopAnimating()
     }
+    
     func setUIImage() -> UIImage? {
         return UIImage()
     }
+    
     func updateUILableError(lable: String)  {
         mesError.text = lable
     }

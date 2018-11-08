@@ -7,7 +7,15 @@
 //
 
 import UIKit
-
+extension UIViewController {
+    func rootUIStoryboard() {
+        let navVC = UINavigationController(rootViewController: self)
+        navVC.navigationController?.isToolbarHidden = true
+        let share = UIApplication.shared.delegate as? AppDelegate
+        share?.window?.rootViewController = navVC
+        share?.window?.makeKeyAndVisible()
+    }
+}
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,37 +24,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-         check()
+         checkLogined()
         return true
     }
-    func check() {
-        if UserDefaults.standard.value(forKey: "phoneNumber") != nil {
-            if  UserDefaults.standard.value(forKey: "typeAccount") as? String ?? "" == "Shop"{
-                let vc = UIStoryboard(name: "TabBarHomeShop", bundle: Bundle.main).instantiateViewController(withIdentifier: "TabBarHomeShop")
-                let navVC = UINavigationController(rootViewController: vc)
-                navVC.navigationController?.isToolbarHidden = true
-                let share = UIApplication.shared.delegate as? AppDelegate
-                share?.window?.rootViewController = navVC
-                share?.window?.makeKeyAndVisible()
+    func checkLogined() {
+        if UserDefaults.standard.value(forKey: KeyUserDefault.typeAccount.rawValue) != nil {
+            if  UserDefaults.standard.value(forKey: KeyUserDefault.typeAccount.rawValue) as? Bool ?? true {
+                let vc = instantiate(TabBarHomeShop.self)
+                vc.rootUIStoryboard()
+//                rootUIStoryboard(nameUIStoryboard: vc)
             }
-            if  UserDefaults.standard.value(forKey: "typeAccount") as? String ?? "" == "Shipper"{
-                guard let vc = UIStoryboard(name: "HomeShipper", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeShipper") as? HomeShipper else { return }
-                let navVC = UINavigationController(rootViewController: vc)
-                navVC.navigationController?.isToolbarHidden = true
-                let share = UIApplication.shared.delegate as? AppDelegate
-                share?.window?.rootViewController = navVC
-                share?.window?.makeKeyAndVisible()
+            if !(UserDefaults.standard.value(forKey: KeyUserDefault.typeAccount.rawValue) as? Bool ?? true) {
+                let vc = instantiate(HomeShipper.self)
+                vc.rootUIStoryboard()
+//                rootUIStoryboard(nameUIStoryboard: vc)
             }
         }
-       
-//        else {
-//            let vc = UIStoryboard(name: "Login1", bundle: Bundle.main).instantiateViewController(withIdentifier: "Login1")
-//            let navVC = UINavigationController(rootViewController: vc)
-//            let share = UIApplication.shared.delegate as? AppDelegate
-//            share?.window?.rootViewController = navVC
-//            share?.window?.makeKeyAndVisible()
-//        }
     }
+//    func rootUIStoryboard(nameUIStoryboard: UIViewController) {
+//        let navVC = UINavigationController(rootViewController: nameUIStoryboard)
+//        navVC.navigationController?.isToolbarHidden = true
+//        let share = UIApplication.shared.delegate as? AppDelegate
+//        share?.window?.rootViewController = navVC
+//        share?.window?.makeKeyAndVisible()
+//    }
+//
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

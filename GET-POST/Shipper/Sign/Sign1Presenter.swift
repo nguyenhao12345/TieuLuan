@@ -10,13 +10,16 @@ import Foundation
 import UIKit
 
 protocol Sign1Presenter {
-    func clickSign(image: UpdateUI, userName: String, passWd: String,repasswd: String,firstAndLastName: String ,typeUser: String, view: PushPopNavigation, updateLable: UpdateUI,updateUIButton: UpdateUI)
-    func didFinishPickingMediaWithInfo(picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [String : Any], updataUIImage: UpdateUI)
+    func clickSign(image: UpdateUI, userName: String, passWd: String, repasswd: String, firstAndLastName: String, typeUser: String, view: PushPopNavigation, updateLable: UpdateUI, updateUIButton: UpdateUI)
+    func didFinishPickingMediaWithInfo(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any], updataUIImage: UpdateUI)
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
     func clickCamera(view: PushPopNavigation)
     func clickBack(view: PushPopNavigation)
 }
 class Sign1PresenterImp: Sign1Presenter {
+    
+    private let news = Service()
+    
     func clickBack(view: PushPopNavigation) {
         let viewControllerMain = instantiate(Login1.self, storyboard: "Login1")
         view.popVC(view: viewControllerMain)
@@ -24,7 +27,7 @@ class Sign1PresenterImp: Sign1Presenter {
     
     func clickCamera(view: PushPopNavigation) {
         let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = view as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePickerController.delegate = view as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
         let actionSheet = UIAlertController(title: "Photos", message: "Choose a Source", preferredStyle:.actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
             imagePickerController.sourceType = .camera
@@ -32,11 +35,9 @@ class Sign1PresenterImp: Sign1Presenter {
         }))
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
             view.present(view: imagePickerController)
-//            self.present(imagePickerController, animated: true, completion: nil)
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         view.present(view: actionSheet)
-//        self.present(actionSheet, animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -48,25 +49,24 @@ class Sign1PresenterImp: Sign1Presenter {
         updataUIImage.updataUIImagePicker(image: image)
         picker.dismiss(animated: true, completion: nil)
     }
-    private let news = Service()
+    
     func checkRepasswd(passwd: String, repasswd: String) -> Bool {
-        if passwd != repasswd {
-            return false
-        }
+        if passwd != repasswd { return false }
         return true
     }
+    
     func checkSpecialCharacter(userName: String) -> String? {
         if CheckSpecialCharacter.share.checkCharacterIsNumber(string: userName) {
             return "Tên đăng nhập không được sử dụng kí tự đặc biệt"
         }
         return nil
     }
+    
     func checkImage(img: UpdateUI) -> Bool {
-        if img.setUIImage() == nil {
-            return false
-        }
+        if img.setUIImage() == nil { return false }
         return true
     }
+    
     func checkFullInfo(userName: String, passWd: String, repasswd: String, img: UpdateUI) -> String? {
         if userName == "" || passWd == "" {
             return "Vui lòng điền đầy đủ thông tin"
@@ -79,18 +79,19 @@ class Sign1PresenterImp: Sign1Presenter {
         }
         return checkSpecialCharacter(userName: userName)
     }
+    
     func navigationPushHomeShop(data: DataUser, view: PushPopNavigation) {
-        let viewControllerMain = instantiate(HomeShop.self, storyboard: "HomeShop")
-        viewControllerMain.config(name: data.nameUser, img: data.image, phone: data.phonenumber, pass: data.pass)
+        let viewControllerMain = instantiate(TabBarHomeShop.self)
         view.pushVC(view: viewControllerMain)
     }
+    
     func navigationPushHomeShipper(data: DataUser, view: PushPopNavigation) {
-        let viewControllerMain = instantiate(HomeShipper.self, storyboard: "HomeShipper")
-//        viewControllerMain.config(name: data.nameUser, img: data.image)
+        let viewControllerMain = instantiate(HomeShipper.self)
         view.pushVC(view: viewControllerMain)
     }
+    
     func makeParameter(username: String, passwd: String, image: UIImage?,firstAndLastName: String ,typeUser: String) -> [String: Any] {
-        var dic : [String: Any]   =  ["phonenumber": "", "passwd": "", "name": "", "nameType":"","nameUser":""]
+        var dic : [String: Any] = [:]
         dic["phonenumber"] = username
         dic["passwd"]   = passwd
         dic["name"] = image
@@ -98,51 +99,46 @@ class Sign1PresenterImp: Sign1Presenter {
         dic["nameUser"] = firstAndLastName
         return dic
     }
-    enum LoginResult {
-        case error(message: String)
-        case success(data: DataUser)
-    }
-    
-    func sign(image: UIImage?, userName: String, passWd: String,firstAndLastName: String ,typeUser: String,updateUIButton: UpdateUI, completion: @escaping (LoginResult)->()) {
+
+    func sign(image: UIImage?, userName: String, passWd: String,firstAndLastName: String ,typeUser: String,updateUIButton: UpdateUI, completion: @escaping (LoginResultHaveData)->()) {
         let dictionary = makeParameter(username: userName, passwd: passWd, image: image, firstAndLastName: firstAndLastName, typeUser: typeUser)
-         updateUIButton.updataUIButton()
+         updateUIButton.disableUIButton()
         news.loadData(urlString: API.signUp, method: HTTPMethod.post, dic: dictionary, fileName: userName, typeImage: "png", completion: {
             (object) in
             let errOr = object as? String ?? ""
             if errOr == "tam khac 0" {
                 updateUIButton.enabledButton()
-                completion(LoginResult.error(message: "Tài khoản này đã tồn tại"))
+                completion(LoginResultHaveData.error(message: "Tài khoản này đã tồn tại"))
             }
             else {
                 guard let dataNews = object as? [String: String] else { return }
                 let user = DataUser(data: dataNews)
-                completion(LoginResult.success(data: user))
+                completion(LoginResultHaveData.success(data: user))
             }
         })
     }
     
-    func clickSign(image: UpdateUI, userName: String, passWd: String,repasswd: String, firstAndLastName: String ,typeUser: String, view: PushPopNavigation, updateLable: UpdateUI, updateUIButton: UpdateUI) {
+    func clickSign(image: UpdateUI, userName: String, passWd: String, repasswd: String, firstAndLastName: String, typeUser: String, view: PushPopNavigation, updateLable: UpdateUI, updateUIButton: UpdateUI) {
         let errorMes = checkFullInfo(userName: userName, passWd: passWd, repasswd: repasswd, img: image)
+        
         guard errorMes == nil else {
             updateLable.updateUILableError(lable: errorMes ?? "")
             return
         }
-        guard let img = image.setUIImage() else {
-            return
-        }
+        guard let img = image.setUIImage() else { return }
+        
         sign(image: img , userName: userName, passWd: passWd, firstAndLastName: firstAndLastName, typeUser: typeUser, updateUIButton: updateUIButton) { (result) in
             switch result {
             case .error(let message):
                 updateLable.updateUILableError(lable: message)
             case .success(let data):
-                updateUIButton.updataUIButton()
-                 UserDefaults.standard.set(userName, forKey: "phoneNumber")
-                if data.nameType == "Shop" {
-             	       UserDefaults.standard.set(data.nameType, forKey: "typeAccount")
+                updateUIButton.disableUIButton()
+                if data.nameType == TypeUser.Shop.rawValue {
+             	     UserDefaults.standard.set(true, forKey: KeyUserDefault.typeAccount.rawValue)
                      self.navigationPushHomeShop(data: data, view: view)
                 }
-                if data.nameType == "Shipper" {
-                       UserDefaults.standard.set(data.nameType, forKey: "typeAccount")
+                if data.nameType == TypeUser.Shipper.rawValue {
+                    UserDefaults.standard.set(false, forKey: KeyUserDefault.typeAccount.rawValue)
                     self.navigationPushHomeShipper(data: data, view: view)
                 }
             }
@@ -150,22 +146,4 @@ class Sign1PresenterImp: Sign1Presenter {
     }
 }
 
-class CheckSpecialCharacter {
-    static let share = CheckSpecialCharacter()
-    func checkCharacter(string: String) -> Bool {
-        for character in string.utf8 {
-            if character < 48 || (character > 57 && character < 65) || (character > 90 && character < 97) || character > 122  {
-                return true
-            }
-        }
-        return false
-    }
-    func checkCharacterIsNumber(string: String) -> Bool {
-        for character in string.utf8 {
-            if character > 47 && character < 58  {
-                return false
-            }
-        }
-        return true
-    }
-}
+

@@ -7,33 +7,24 @@
 //
 
 import UIKit
-protocol InjectProtocol {
-    func config()
-}
-extension TabBarHomeShop: InjectProtocol {
-    func config() {
-        
-    }
-}
+
 class TabBarHomeShop: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupTabBar()
         self.navigationController?.isNavigationBarHidden = true
      
     }
     private var numberPhone: String = ""
+    
     func getDataAfterLoginOrSign(numberPhone: String) {
         self.numberPhone = numberPhone
     }
    
     private func setupTabBar() {
         let createNewsControllerStoryboard = instantiate(CreateNewsController.self, storyboard: "CreateNewsController")
-        createNewsControllerStoryboard.presenter = CreateNewsControllerImp()
-        CreateNewsControllerImp().getDataAfterLogin(phone: numberPhone)
-        
+        createNewsControllerStoryboard.inject(presenter:  CreateNewsControllerImp(string: numberPhone))
         let createNewsController = UINavigationController(rootViewController: createNewsControllerStoryboard)
         createNewsController.tabBarItem.title = TitleItemShop.CreateItems.rawValue
        
@@ -61,15 +52,8 @@ class TabBarHomeShop: UITabBarController {
         case TitleItemShop.Account.rawValue:
             print("mh3")
              break
-        default:
-            break
+        default: break
         }
     }
-}
-enum TitleItemShop: String {
-    case CreateItems = "Tạo đơn"
-    case ListItems = "Danh sách"
-    case Account = "Tài khoản"
-    
 }
 

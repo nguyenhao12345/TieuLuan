@@ -8,12 +8,7 @@
 
 import Foundation
 
-enum NameViewControllerScreenShiper: String {
-    case NewViewController = "NewViewController"
-    case StorageViewController = "StorageViewController"
-    case AccountViewController = "AccountViewController"
-    case CreateViewController = "CreateViewController"
-}
+
 
 struct ModelTabBarItemScreenShiper {
     

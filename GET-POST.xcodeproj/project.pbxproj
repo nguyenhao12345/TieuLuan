@@ -12,6 +12,9 @@
 		AA1BAC771DA26D5500204340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1BAC751DA26D5500204340 /* Main.storyboard */; };
 		AA1BAC791DA26D5500204340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1BAC781DA26D5500204340 /* Assets.xcassets */; };
 		AA1BAC7C1DA26D5500204340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1BAC7A1DA26D5500204340 /* LaunchScreen.storyboard */; };
+		CC148C56219429C700A4DC7D /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC148C55219429C700A4DC7D /* Enum.swift */; };
+		CC148C5821942A3000A4DC7D /* CheckSpecialCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC148C5721942A3000A4DC7D /* CheckSpecialCharacter.swift */; };
+		CC148C5A21943E2100A4DC7D /* ExtensionCreateNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC148C5921943E2100A4DC7D /* ExtensionCreateNewsController.swift */; };
 		CC152FFA217F2CEB00B83816 /* Login1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC152FF9217F2CEB00B83816 /* Login1Presenter.swift */; };
 		CC152FFC2181048100B83816 /* ExtensionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC152FFB2181048100B83816 /* ExtensionCollection.swift */; };
 		CC3AF9ED218DA6E70059DAA2 /* TabBarHomeShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3AF9EC218DA6E70059DAA2 /* TabBarHomeShop.storyboard */; };
@@ -75,6 +78,9 @@
 		AA1BAC781DA26D5500204340 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA1BAC7B1DA26D5500204340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA1BAC7D1DA26D5500204340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC148C55219429C700A4DC7D /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		CC148C5721942A3000A4DC7D /* CheckSpecialCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckSpecialCharacter.swift; sourceTree = "<group>"; };
+		CC148C5921943E2100A4DC7D /* ExtensionCreateNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCreateNewsController.swift; sourceTree = "<group>"; };
 		CC152FF9217F2CEB00B83816 /* Login1Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login1Presenter.swift; sourceTree = "<group>"; };
 		CC152FFB2181048100B83816 /* ExtensionCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCollection.swift; sourceTree = "<group>"; };
 		CC3AF9EC218DA6E70059DAA2 /* TabBarHomeShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarHomeShop.storyboard; sourceTree = "<group>"; };
@@ -193,6 +199,7 @@
 				CC3AF9F2218DAA7D0059DAA2 /* CreateNewsController.storyboard */,
 				CC3AF9F0218DAA750059DAA2 /* CreateNewsController.swift */,
 				CC3AF9FD218E4C4A0059DAA2 /* CreateNewsControllerPresenter.swift */,
+				CC148C5921943E2100A4DC7D /* ExtensionCreateNewsController.swift */,
 			);
 			path = CreateNewsItem;
 			sourceTree = "<group>";
@@ -227,6 +234,8 @@
 				CC497619217B057A00878ED8 /* API.swift */,
 				CC152FFB2181048100B83816 /* ExtensionCollection.swift */,
 				CC67942421877E92006DAF34 /* ExtensionAnimationUIbutton.swift */,
+				CC148C55219429C700A4DC7D /* Enum.swift */,
+				CC148C5721942A3000A4DC7D /* CheckSpecialCharacter.swift */,
 				CC6794192186AB45006DAF34 /* PHP */,
 			);
 			path = Common;
@@ -502,6 +511,8 @@
 			files = (
 				CC3AF9F5218DAAAC0059DAA2 /* ListNewsController.swift in Sources */,
 				CCAF150821839C4F0038A80A /* HomeShipper.swift in Sources */,
+				CC148C5A21943E2100A4DC7D /* ExtensionCreateNewsController.swift in Sources */,
+				CC148C5821942A3000A4DC7D /* CheckSpecialCharacter.swift in Sources */,
 				DAFC39A22189501800E02B9B /* AccountViewController.swift in Sources */,
 				CCDCAD4F217EE81C00699665 /* Sign1Presenter.swift in Sources */,
 				AA1BAC741DA26D5500204340 /* ViewController.swift in Sources */,
@@ -514,6 +525,7 @@
 				CC67942521877E92006DAF34 /* ExtensionAnimationUIbutton.swift in Sources */,
 				CC152FFC2181048100B83816 /* ExtensionCollection.swift in Sources */,
 				CC497618217A28C800878ED8 /* MyImage.swift in Sources */,
+				CC148C56219429C700A4DC7D /* Enum.swift in Sources */,
 				DAFC399921894F8B00E02B9B /* StorageViewController.swift in Sources */,
 				CC3AFA01218E6B430059DAA2 /* DetailShopPresenter.swift in Sources */,
 				CCEBC028218EA54800CDA75D /* CustomTabBar.swift in Sources */,

@@ -27,7 +27,7 @@ enum LoginResult {
     case success(data: String)
 }
 
-enum NameViewControllerScreenShiper: String {
+enum NameViewControllerScreen: String {
     case NewViewController     = "NewViewController"
     case StorageViewController = "StorageViewController"
     case AccountViewController = "AccountViewController"

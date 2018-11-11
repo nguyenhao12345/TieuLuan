@@ -15,6 +15,8 @@
 		CC148C56219429C700A4DC7D /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC148C55219429C700A4DC7D /* Enum.swift */; };
 		CC148C5821942A3000A4DC7D /* CheckSpecialCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC148C5721942A3000A4DC7D /* CheckSpecialCharacter.swift */; };
 		CC148C5A21943E2100A4DC7D /* ExtensionCreateNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC148C5921943E2100A4DC7D /* ExtensionCreateNewsController.swift */; };
+		CC148C5C2197B52C00A4DC7D /* UIViewPostInfoItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC148C5B2197B52C00A4DC7D /* UIViewPostInfoItemController.swift */; };
+		CC148C5F2197EFF900A4DC7D /* HomeShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC148C5E2197EFF900A4DC7D /* HomeShopPresenter.swift */; };
 		CC152FFA217F2CEB00B83816 /* Login1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC152FF9217F2CEB00B83816 /* Login1Presenter.swift */; };
 		CC152FFC2181048100B83816 /* ExtensionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC152FFB2181048100B83816 /* ExtensionCollection.swift */; };
 		CC3AF9ED218DA6E70059DAA2 /* TabBarHomeShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3AF9EC218DA6E70059DAA2 /* TabBarHomeShop.storyboard */; };
@@ -49,14 +51,16 @@
 		CC763B32217E2A6800717AB8 /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC763B31217E2A6800717AB8 /* LoadImage.swift */; };
 		CC763B34217E2C9300717AB8 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC763B33217E2C9300717AB8 /* UseCase.swift */; };
 		CC83202A21865C23007F72FD /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC83202921865C23007F72FD /* Cell.xib */; };
-		CCAF150621839C270038A80A /* HomeShipper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAF150521839C270038A80A /* HomeShipper.storyboard */; };
-		CCAF150821839C4F0038A80A /* HomeShipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF150721839C4F0038A80A /* HomeShipper.swift */; };
-		CCCC114A2184CAF800C30010 /* HomeShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC11492184CAF800C30010 /* HomeShopPresenter.swift */; };
+		CCAF150621839C270038A80A /* TabBarShipperAndShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAF150521839C270038A80A /* TabBarShipperAndShop.storyboard */; };
+		CCAF150821839C4F0038A80A /* TabBarShipperAndShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF150721839C4F0038A80A /* TabBarShipperAndShop.swift */; };
 		CCDCAD4F217EE81C00699665 /* Sign1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */; };
 		CCEBC028218EA54800CDA75D /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBC027218EA54800CDA75D /* CustomTabBar.swift */; };
+		CCF4E4BC21980CF800B67994 /* ServiceLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF4E4BB21980CF800B67994 /* ServiceLogin.storyboard */; };
+		CCF4E4BE21980EC600B67994 /* ServiceLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF4E4BD21980EC600B67994 /* ServiceLogin.swift */; };
+		CCF4E4C02198176D00B67994 /* ServiceLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF4E4BF2198176D00B67994 /* ServiceLoginPresenter.swift */; };
 		DA4C185D2189E892007DDA46 /* NewViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C185C2189E892007DDA46 /* NewViewControllerPresenter.swift */; };
 		DA4C18602189F3D3007DDA46 /* ModelNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4C185F2189F3D3007DDA46 /* ModelNewView.swift */; };
-		DAEDB3A5218C5D9F00B8F0D8 /* HomeShiperPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEDB3A4218C5D9F00B8F0D8 /* HomeShiperPresenter.swift */; };
+		DAEDB3A5218C5D9F00B8F0D8 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEDB3A4218C5D9F00B8F0D8 /* RootTabBarController.swift */; };
 		DAEDB3A8218C863300B8F0D8 /* ModelTabBarItemScreenShiper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEDB3A7218C863300B8F0D8 /* ModelTabBarItemScreenShiper.swift */; };
 		DAFC399921894F8B00E02B9B /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFC399821894F8B00E02B9B /* StorageViewController.swift */; };
 		DAFC399B21894FB300E02B9B /* StorageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAFC399A21894FB300E02B9B /* StorageViewController.storyboard */; };
@@ -81,6 +85,8 @@
 		CC148C55219429C700A4DC7D /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		CC148C5721942A3000A4DC7D /* CheckSpecialCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckSpecialCharacter.swift; sourceTree = "<group>"; };
 		CC148C5921943E2100A4DC7D /* ExtensionCreateNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCreateNewsController.swift; sourceTree = "<group>"; };
+		CC148C5B2197B52C00A4DC7D /* UIViewPostInfoItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPostInfoItemController.swift; sourceTree = "<group>"; };
+		CC148C5E2197EFF900A4DC7D /* HomeShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShopPresenter.swift; sourceTree = "<group>"; };
 		CC152FF9217F2CEB00B83816 /* Login1Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login1Presenter.swift; sourceTree = "<group>"; };
 		CC152FFB2181048100B83816 /* ExtensionCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCollection.swift; sourceTree = "<group>"; };
 		CC3AF9EC218DA6E70059DAA2 /* TabBarHomeShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarHomeShop.storyboard; sourceTree = "<group>"; };
@@ -115,14 +121,16 @@
 		CC763B31217E2A6800717AB8 /* LoadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
 		CC763B33217E2C9300717AB8 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		CC83202921865C23007F72FD /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
-		CCAF150521839C270038A80A /* HomeShipper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeShipper.storyboard; sourceTree = "<group>"; };
-		CCAF150721839C4F0038A80A /* HomeShipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShipper.swift; sourceTree = "<group>"; };
-		CCCC11492184CAF800C30010 /* HomeShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShopPresenter.swift; sourceTree = "<group>"; };
+		CCAF150521839C270038A80A /* TabBarShipperAndShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarShipperAndShop.storyboard; sourceTree = "<group>"; };
+		CCAF150721839C4F0038A80A /* TabBarShipperAndShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarShipperAndShop.swift; sourceTree = "<group>"; };
 		CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign1Presenter.swift; sourceTree = "<group>"; };
 		CCEBC027218EA54800CDA75D /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		CCF4E4BB21980CF800B67994 /* ServiceLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceLogin.storyboard; sourceTree = "<group>"; };
+		CCF4E4BD21980EC600B67994 /* ServiceLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLogin.swift; sourceTree = "<group>"; };
+		CCF4E4BF2198176D00B67994 /* ServiceLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLoginPresenter.swift; sourceTree = "<group>"; };
 		DA4C185C2189E892007DDA46 /* NewViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewControllerPresenter.swift; sourceTree = "<group>"; };
 		DA4C185F2189F3D3007DDA46 /* ModelNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNewView.swift; sourceTree = "<group>"; };
-		DAEDB3A4218C5D9F00B8F0D8 /* HomeShiperPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShiperPresenter.swift; sourceTree = "<group>"; };
+		DAEDB3A4218C5D9F00B8F0D8 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		DAEDB3A7218C863300B8F0D8 /* ModelTabBarItemScreenShiper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTabBarItemScreenShiper.swift; sourceTree = "<group>"; };
 		DAFC399821894F8B00E02B9B /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		DAFC399A21894FB300E02B9B /* StorageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StorageViewController.storyboard; sourceTree = "<group>"; };
@@ -173,6 +181,17 @@
 			path = "GET-POST";
 			sourceTree = "<group>";
 		};
+		CC148C5D2197EEAC00A4DC7D /* ServiceApp */ = {
+			isa = PBXGroup;
+			children = (
+				CCF4E4BB21980CF800B67994 /* ServiceLogin.storyboard */,
+				CCF4E4BD21980EC600B67994 /* ServiceLogin.swift */,
+				CCF4E4BF2198176D00B67994 /* ServiceLoginPresenter.swift */,
+			);
+			name = ServiceApp;
+			path = Login;
+			sourceTree = "<group>";
+		};
 		CC152FFD2181BD3500B83816 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +219,7 @@
 				CC3AF9F0218DAA750059DAA2 /* CreateNewsController.swift */,
 				CC3AF9FD218E4C4A0059DAA2 /* CreateNewsControllerPresenter.swift */,
 				CC148C5921943E2100A4DC7D /* ExtensionCreateNewsController.swift */,
+				CC148C5B2197B52C00A4DC7D /* UIViewPostInfoItemController.swift */,
 			);
 			path = CreateNewsItem;
 			sourceTree = "<group>";
@@ -251,6 +271,7 @@
 				AA1BAC781DA26D5500204340 /* Assets.xcassets */,
 				CC83202B21865D9A007F72FD /* Common */,
 				CCCC11482184C87700C30010 /* HomeShop */,
+				CC148C5D2197EEAC00A4DC7D /* ServiceApp */,
 				CCCC11472184C86400C30010 /* HomeShipper */,
 				CC152FFE2181BD3F00B83816 /* Login */,
 				CC152FFD2181BD3500B83816 /* Sign */,
@@ -279,8 +300,8 @@
 				DAFC399521894EF200E02B9B /* CreateScreen */,
 				DAFC399421894EA700E02B9B /* AccountScreen */,
 				DAFC399321894E5A00E02B9B /* NewScreen */,
-				CCAF150521839C270038A80A /* HomeShipper.storyboard */,
-				CCAF150721839C4F0038A80A /* HomeShipper.swift */,
+				CCAF150521839C270038A80A /* TabBarShipperAndShop.storyboard */,
+				CCAF150721839C4F0038A80A /* TabBarShipperAndShop.swift */,
 			);
 			path = HomeShipper;
 			sourceTree = "<group>";
@@ -293,7 +314,6 @@
 				CC3AF9FC218E4C1A0059DAA2 /* CreateNewsItem */,
 				CC763B2D217C47F200717AB8 /* HomeShop.storyboard */,
 				CC763B2F217C481200717AB8 /* HomeShop.swift */,
-				CCCC11492184CAF800C30010 /* HomeShopPresenter.swift */,
 				CC83202921865C23007F72FD /* Cell.xib */,
 				CC5146A32187A3DA000E4942 /* TextFieldCustom.swift */,
 				CC3AF9EC218DA6E70059DAA2 /* TabBarHomeShop.storyboard */,
@@ -331,7 +351,8 @@
 		DAEDB3A3218C5D8200B8F0D8 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				DAEDB3A4218C5D9F00B8F0D8 /* HomeShiperPresenter.swift */,
+				CC148C5E2197EFF900A4DC7D /* HomeShopPresenter.swift */,
+				DAEDB3A4218C5D9F00B8F0D8 /* RootTabBarController.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -485,13 +506,14 @@
 				DAFC39A92189506000E02B9B /* NewViewController.storyboard in Resources */,
 				AA1BAC7C1DA26D5500204340 /* LaunchScreen.storyboard in Resources */,
 				DAFC39B02189621E00E02B9B /* CommunicationTableViewCell.xib in Resources */,
-				CCAF150621839C270038A80A /* HomeShipper.storyboard in Resources */,
+				CCAF150621839C270038A80A /* TabBarShipperAndShop.storyboard in Resources */,
 				CC763B26217C34A900717AB8 /* Sign1.storyboard in Resources */,
 				CC3AF9F3218DAA7D0059DAA2 /* CreateNewsController.storyboard in Resources */,
 				AA1BAC791DA26D5500204340 /* Assets.xcassets in Resources */,
 				CC763B24217C339B00717AB8 /* Login2.storyboard in Resources */,
 				AA1BAC771DA26D5500204340 /* Main.storyboard in Resources */,
 				DAFC399B21894FB300E02B9B /* StorageViewController.storyboard in Resources */,
+				CCF4E4BC21980CF800B67994 /* ServiceLogin.storyboard in Resources */,
 				DAFC39A02189500000E02B9B /* CreateViewController.storyboard in Resources */,
 				CC3AF9ED218DA6E70059DAA2 /* TabBarHomeShop.storyboard in Resources */,
 				CC763B22217C233800717AB8 /* Login1.storyboard in Resources */,
@@ -510,14 +532,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC3AF9F5218DAAAC0059DAA2 /* ListNewsController.swift in Sources */,
-				CCAF150821839C4F0038A80A /* HomeShipper.swift in Sources */,
+				CCAF150821839C4F0038A80A /* TabBarShipperAndShop.swift in Sources */,
 				CC148C5A21943E2100A4DC7D /* ExtensionCreateNewsController.swift in Sources */,
 				CC148C5821942A3000A4DC7D /* CheckSpecialCharacter.swift in Sources */,
 				DAFC39A22189501800E02B9B /* AccountViewController.swift in Sources */,
+				CC148C5F2197EFF900A4DC7D /* HomeShopPresenter.swift in Sources */,
 				CCDCAD4F217EE81C00699665 /* Sign1Presenter.swift in Sources */,
 				AA1BAC741DA26D5500204340 /* ViewController.swift in Sources */,
 				CC3AF9EF218DA7760059DAA2 /* TabBarHomeShop.swift in Sources */,
-				CCCC114A2184CAF800C30010 /* HomeShopPresenter.swift in Sources */,
 				CC763B2C217C476800717AB8 /* Sign1.swift in Sources */,
 				DAFC39A72189505800E02B9B /* NewViewController.swift in Sources */,
 				CC763B30217C481200717AB8 /* HomeShop.swift in Sources */,
@@ -525,11 +547,12 @@
 				CC67942521877E92006DAF34 /* ExtensionAnimationUIbutton.swift in Sources */,
 				CC152FFC2181048100B83816 /* ExtensionCollection.swift in Sources */,
 				CC497618217A28C800878ED8 /* MyImage.swift in Sources */,
+				CCF4E4C02198176D00B67994 /* ServiceLoginPresenter.swift in Sources */,
 				CC148C56219429C700A4DC7D /* Enum.swift in Sources */,
 				DAFC399921894F8B00E02B9B /* StorageViewController.swift in Sources */,
 				CC3AFA01218E6B430059DAA2 /* DetailShopPresenter.swift in Sources */,
 				CCEBC028218EA54800CDA75D /* CustomTabBar.swift in Sources */,
-				DAEDB3A5218C5D9F00B8F0D8 /* HomeShiperPresenter.swift in Sources */,
+				DAEDB3A5218C5D9F00B8F0D8 /* RootTabBarController.swift in Sources */,
 				CC763B32217E2A6800717AB8 /* LoadImage.swift in Sources */,
 				DA4C18602189F3D3007DDA46 /* ModelNewView.swift in Sources */,
 				CC3AF9F1218DAA750059DAA2 /* CreateNewsController.swift in Sources */,
@@ -542,11 +565,13 @@
 				CC3AF9F9218DAAE50059DAA2 /* DetailShop.swift in Sources */,
 				DAEDB3A8218C863300B8F0D8 /* ModelTabBarItemScreenShiper.swift in Sources */,
 				CC763B28217C474400717AB8 /* Login1.swift in Sources */,
+				CC148C5C2197B52C00A4DC7D /* UIViewPostInfoItemController.swift in Sources */,
 				CC49761E217B07A100878ED8 /* ViewControllerPresenter.swift in Sources */,
 				CC5146A42187A3DA000E4942 /* TextFieldCustom.swift in Sources */,
 				CC763B34217E2C9300717AB8 /* UseCase.swift in Sources */,
 				CC49761A217B057A00878ED8 /* API.swift in Sources */,
 				AA1BAC721DA26D5500204340 /* AppDelegate.swift in Sources */,
+				CCF4E4BE21980EC600B67994 /* ServiceLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

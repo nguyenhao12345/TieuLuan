@@ -47,7 +47,9 @@ class Login1: UIViewController {
 extension Login1: PushPopNavigation {
     func popVC(view: UIViewController) {}
     
-    func present(view: UIViewController) {}
+    func present(view: UIViewController) {
+        present(view, animated: true)
+    }
     
     func pushVC(view: UIViewController) {
         activityLoad.stopAnimating()

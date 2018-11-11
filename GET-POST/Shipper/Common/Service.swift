@@ -59,12 +59,17 @@ class Service {
         session.dataTask(with: request, completionHandler: {
             (data,res,err) in
             //print(String(data: data!, encoding: .utf8))
+            guard let dataExport = data else { print("k co mang")
+                return }
             do{
-                let result = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+                let result = try JSONSerialization.jsonObject(with: dataExport, options: JSONSerialization.ReadingOptions.allowFragments)
                 DispatchQueue.main.async {
                     completion(result)
                 }
-            }catch{}
+            }
+            catch{
+                print("ngoai le")
+            }
         }).resume()
     }
     

@@ -8,6 +8,8 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
-    
+class AccountViewController: UIViewController, ViewControllerTabar {
+    var nameBar: String {
+        return "Tài khoản"
+    }
 }

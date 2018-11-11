@@ -10,33 +10,33 @@ import Foundation
 
 
 
-struct ModelTabBarItemScreenShiper {
-    
-    private let nameViewController: String
-    private let withIdentifier: String
-    private let title: String
-    private let nameViewControllerScreenShiper: NameViewControllerScreenShiper
-    
-    init(nameViewController: String, withIdentifier: String, title: String, nameViewControllerScreenShiper: NameViewControllerScreenShiper) {
-        self.nameViewController = nameViewController
-        self.withIdentifier = withIdentifier
-        self.title = title
-        self.nameViewControllerScreenShiper = nameViewControllerScreenShiper
-    }
-    
-    func getNameViewController() -> String {
-        return nameViewController
-    }
-    
-    func getwithIdentifier() -> String {
-        return withIdentifier
-    }
-    
-    func getTitle() -> String {
-        return title
-    }
-    
-    func getNameViewControllerScreenShiper() -> NameViewControllerScreenShiper {
-        return nameViewControllerScreenShiper
-    }
-}
+//struct ModelTabBarItemScreenShiper {
+//    
+//    private let nameViewController: String
+//    private let withIdentifier: String
+//    private let title: String
+//    private let nameViewControllerScreenShiper: NameViewControllerScreenShiper
+//    
+//    init(nameViewController: String, withIdentifier: String, title: String, nameViewControllerScreenShiper: NameViewControllerScreenShiper) {
+//        self.nameViewController = nameViewController
+//        self.withIdentifier = withIdentifier
+//        self.title = title
+//        self.nameViewControllerScreenShiper = nameViewControllerScreenShiper
+//    }
+//    
+//    func getNameViewController() -> String {
+//        return nameViewController
+//    }
+//    
+//    func getwithIdentifier() -> String {
+//        return withIdentifier
+//    }
+//    
+//    func getTitle() -> String {
+//        return title
+//    }
+//    
+//    func getNameViewControllerScreenShiper() -> NameViewControllerScreenShiper {
+//        return nameViewControllerScreenShiper
+//    }
+//}

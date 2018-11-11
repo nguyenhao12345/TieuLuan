@@ -8,6 +8,8 @@
 
 import UIKit
 
-class StorageViewController: UIViewController {
-    
+class StorageViewController: UIViewController, ViewControllerTabar {
+    var nameBar: String {
+        return "Lưu trữ"
+    }
 }

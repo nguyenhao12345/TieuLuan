@@ -8,7 +8,11 @@
 
 import UIKit
 
-class NewViewController: ViewController {
+protocol ViewControllerTabar {
+    var nameBar: String { get }
+}
+
+class NewViewController: ViewController, ViewControllerTabar {
     @IBOutlet weak private var communicationTableView: UITableView!
     fileprivate var presenter: NewViewControllerPresenter?
     
@@ -17,6 +21,10 @@ class NewViewController: ViewController {
         navigationController?.isNavigationBarHidden = true
         presenter = NewViewControllerPresenterImp()
         presenter?.register(nibName: "CommunicationTableViewCell", forCellWithReuseIdentifier: "communicationTableViewCell", tableView: communicationTableView)
+    }
+    
+    var nameBar: String {
+        return "Mới nhất"
     }
 }
 

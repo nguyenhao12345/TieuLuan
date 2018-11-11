@@ -10,7 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class CreateNewsController: UIViewController, UISearchBarDelegate {
+class CreateNewsController: UIViewController, UISearchBarDelegate, ViewControllerTabar {
+    
+    var nameBar: String {
+        return "Tạo mới"
+    }
+    
     fileprivate let greenColorCustom = "4EFF45"
     fileprivate let redColorCustom   = "FF1320"
     
@@ -22,10 +27,9 @@ class CreateNewsController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak fileprivate var contentTextField:        UITextField!
     @IBOutlet weak fileprivate var priceTextField:          UITextField!
     @IBOutlet weak fileprivate var prepayTextField:         UITextField!
-    
-    @IBOutlet weak fileprivate var lblInfoPostItem: UILabel!
-    @IBOutlet weak fileprivate var lblVNDprice: UILabel!
-    @IBOutlet weak fileprivate var lblVNDadvance: UILabel!
+    @IBOutlet weak fileprivate var lblInfoPostItem:         UILabel!
+    @IBOutlet weak fileprivate var lblVNDprice:             UILabel!
+    @IBOutlet weak fileprivate var lblVNDadvance:           UILabel!
     
     @IBOutlet weak fileprivate var viewPostItems:           UIView!
     @IBOutlet weak fileprivate var PostItemButton:          UIButton!
@@ -181,7 +185,7 @@ extension CreateNewsController: UpdataMapView {
     }
 }
 
-protocol UpdateUICreateNewsController {
+protocol UpdateUICreateNewsController { //CreateNewsProtocol
     func updateUIAfterPostItemSucess()
 }
 extension CreateNewsController: UpdateUICreateNewsController {

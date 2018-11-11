@@ -7,71 +7,33 @@
 //
 
 import UIKit
-extension UIViewController {
-    func rootUIStoryboard() {
-        let navVC = UINavigationController(rootViewController: self)
-        navVC.navigationController?.isToolbarHidden = true
-        let share = UIApplication.shared.delegate as? AppDelegate
-        share?.window?.rootViewController = navVC
-        share?.window?.makeKeyAndVisible()
-    }
-}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-         checkLogined()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        checkLogined()
         return true
     }
-    func checkLogined() {
-        if UserDefaults.standard.value(forKey: KeyUserDefault.typeAccount.rawValue) != nil {
-            if  UserDefaults.standard.value(forKey: KeyUserDefault.typeAccount.rawValue) as? Bool ?? true {
-                let vc = instantiate(TabBarHomeShop.self)
-                vc.rootUIStoryboard()
-//                rootUIStoryboard(nameUIStoryboard: vc)
-            }
-            if !(UserDefaults.standard.value(forKey: KeyUserDefault.typeAccount.rawValue) as? Bool ?? true) {
-                let vc = instantiate(HomeShipper.self)
-                vc.rootUIStoryboard()
-//                rootUIStoryboard(nameUIStoryboard: vc)
-            }
-        }
-    }
-//    func rootUIStoryboard(nameUIStoryboard: UIViewController) {
-//        let navVC = UINavigationController(rootViewController: nameUIStoryboard)
-//        navVC.navigationController?.isToolbarHidden = true
-//        let share = UIApplication.shared.delegate as? AppDelegate
-//        share?.window?.rootViewController = navVC
-//        share?.window?.makeKeyAndVisible()
-//    }
-//
     
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    func checkLogined() {
+        if let sdt = UserDefaults.standard.value(forKey: "numberPhone") {
+            let viewController = instantiate(ServiceLogin.self)
+            guard let sdtExport = sdt as? String else { return }
+            viewController.inject(presenterServiceLogin: ServiceLoginPresenterImp.init(numberPhone: sdtExport, passWd: nil))
+            viewController.rootUIStoryboard()
+        } else {
+            let viewController = instantiate(Login1.self)
+            viewController.rootUIStoryboard()
+        }
+        
+        
+//        let viewController = instantiate(TabBarHomeShop.self)
+//        let presenter = isLogin ? presenterImplHao() : presenterImplHieu()
+//        viewController.rootUIStoryboard()
     }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
 }
 

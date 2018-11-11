@@ -21,7 +21,7 @@ class DetailShopPresenterImp: DetailShopPresenter {
         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel,handler:{ (action:UIAlertAction) in
         }))
         alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { (action:UIAlertAction) in
-            UserDefaults.standard.removeObject(forKey: KeyUserDefault.typeAccount.rawValue)
+            UserDefaults.standard.removeObject(forKey: TypeUser.Shop.rawValue)
             let vc = instantiate(Login1.self)
             vc.rootUIStoryboard()
         }))

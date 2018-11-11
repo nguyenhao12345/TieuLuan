@@ -8,6 +8,8 @@
 
 import UIKit
 
-class CreateViewController: ViewController {
-    
+class CreateViewController: ViewController, ViewControllerTabar {
+    var nameBar: String {
+        return "Tạo mới"
+    }
 }

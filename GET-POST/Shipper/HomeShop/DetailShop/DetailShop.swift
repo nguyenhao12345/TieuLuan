@@ -9,13 +9,16 @@
 import UIKit
 
 
-class DetailShop: UIViewController {
+class DetailShop: UIViewController,ViewControllerTabar {
 
     @IBOutlet weak fileprivate var passwdShop:      UITextField!
     @IBOutlet weak fileprivate var numberPhoneShop: UITextField!
     @IBOutlet weak fileprivate var nameShop:        UITextField!
     @IBOutlet weak fileprivate var imgShop:         UIView!
     
+    var nameBar: String {
+        return "Tài khoản"
+    }
     
     var presenter: DetailShopPresenter?
     @IBAction func clickLogout(_ sender: Any) {
@@ -25,7 +28,7 @@ class DetailShop: UIViewController {
         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel,handler:{ (action:UIAlertAction) in
         }))
         alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { (action:UIAlertAction) in
-            UserDefaults.standard.removeObject(forKey: "typeAccount")
+            UserDefaults.standard.removeObject(forKey: "numberPhone")
             
             let vc = UIStoryboard(name: "Login1", bundle: Bundle.main).instantiateViewController(withIdentifier: "Login1")
             let navVC = UINavigationController(rootViewController: vc)

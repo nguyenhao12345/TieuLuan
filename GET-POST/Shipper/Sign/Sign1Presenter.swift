@@ -86,8 +86,8 @@ class Sign1PresenterImp: Sign1Presenter {
     }
     
     func navigationPushHomeShipper(data: DataUser, view: PushPopNavigation) {
-        let viewControllerMain = instantiate(HomeShipper.self)
-        view.pushVC(view: viewControllerMain)
+//        let viewControllerMain = instantiate(HomeShipper.self)
+//        view.pushVC(view: viewControllerMain)
     }
     
     func makeParameter(username: String, passwd: String, image: UIImage?,firstAndLastName: String ,typeUser: String) -> [String: Any] {

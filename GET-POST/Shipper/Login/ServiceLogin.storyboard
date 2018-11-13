@@ -17,9 +17,25 @@
                     <view key="view" contentMode="scaleToFill" id="DEB-uF-gti">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o46-2k-CQt">
+                                <rect key="frame" x="87.5" y="243.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="o46-2k-CQt" secondAttribute="height" multiplier="1:1" id="GUy-5b-Anf"/>
+                                    <constraint firstAttribute="width" constant="200" id="iMf-SU-6Se"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o46-2k-CQt" firstAttribute="centerX" secondItem="xhF-Ht-KgS" secondAttribute="centerX" id="PFE-mR-99z"/>
+                            <constraint firstItem="o46-2k-CQt" firstAttribute="centerY" secondItem="xhF-Ht-KgS" secondAttribute="centerY" id="wFf-nd-3Km"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xhF-Ht-KgS"/>
                     </view>
+                    <connections>
+                        <outlet property="loadImageGif" destination="o46-2k-CQt" id="9b6-Eo-gET"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDs-86-xk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

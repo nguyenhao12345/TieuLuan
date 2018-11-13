@@ -13,7 +13,6 @@ extension UIViewController {
     func rootUIStoryboard() {
         guard let share = UIApplication.shared.delegate as? AppDelegate else { return }
         let navigationController = UINavigationController(rootViewController: self)
-        
         navigationController.isToolbarHidden = true
         share.window?.rootViewController = navigationController
         share.window?.makeKeyAndVisible()

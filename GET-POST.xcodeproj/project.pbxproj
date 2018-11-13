@@ -51,6 +51,8 @@
 		CC763B32217E2A6800717AB8 /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC763B31217E2A6800717AB8 /* LoadImage.swift */; };
 		CC763B34217E2C9300717AB8 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC763B33217E2C9300717AB8 /* UseCase.swift */; };
 		CC83202A21865C23007F72FD /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC83202921865C23007F72FD /* Cell.xib */; };
+		CC8812972199EE5C00705DCB /* ImageGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8812962199EE5C00705DCB /* ImageGif.swift */; };
+		CC88129B2199F0FB00705DCB /* w4lCH3c-2.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC88129A2199F0FB00705DCB /* w4lCH3c-2.gif */; };
 		CCAF150621839C270038A80A /* TabBarShipperAndShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAF150521839C270038A80A /* TabBarShipperAndShop.storyboard */; };
 		CCAF150821839C4F0038A80A /* TabBarShipperAndShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF150721839C4F0038A80A /* TabBarShipperAndShop.swift */; };
 		CCDCAD4F217EE81C00699665 /* Sign1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */; };
@@ -121,6 +123,8 @@
 		CC763B31217E2A6800717AB8 /* LoadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
 		CC763B33217E2C9300717AB8 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		CC83202921865C23007F72FD /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		CC8812962199EE5C00705DCB /* ImageGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGif.swift; sourceTree = "<group>"; };
+		CC88129A2199F0FB00705DCB /* w4lCH3c-2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "w4lCH3c-2.gif"; sourceTree = "<group>"; };
 		CCAF150521839C270038A80A /* TabBarShipperAndShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarShipperAndShop.storyboard; sourceTree = "<group>"; };
 		CCAF150721839C4F0038A80A /* TabBarShipperAndShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarShipperAndShop.swift; sourceTree = "<group>"; };
 		CCDCAD4E217EE81C00699665 /* Sign1Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign1Presenter.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 				CC152FFB2181048100B83816 /* ExtensionCollection.swift */,
 				CC67942421877E92006DAF34 /* ExtensionAnimationUIbutton.swift */,
 				CC148C55219429C700A4DC7D /* Enum.swift */,
+				CC8812962199EE5C00705DCB /* ImageGif.swift */,
 				CC148C5721942A3000A4DC7D /* CheckSpecialCharacter.swift */,
 				CC6794192186AB45006DAF34 /* PHP */,
 			);
@@ -269,6 +274,7 @@
 				AA1BAC711DA26D5500204340 /* AppDelegate.swift */,
 				AA1BAC7A1DA26D5500204340 /* LaunchScreen.storyboard */,
 				AA1BAC781DA26D5500204340 /* Assets.xcassets */,
+				CC88129A2199F0FB00705DCB /* w4lCH3c-2.gif */,
 				CC83202B21865D9A007F72FD /* Common */,
 				CCCC11482184C87700C30010 /* HomeShop */,
 				CC148C5D2197EEAC00A4DC7D /* ServiceApp */,
@@ -521,6 +527,7 @@
 				CC6794212186AB75006DAF34 /* AddItemOfShop.php in Resources */,
 				CC763B2E217C47F200717AB8 /* HomeShop.storyboard in Resources */,
 				CC3AF9FB218DAAEF0059DAA2 /* DetailShop.storyboard in Resources */,
+				CC88129B2199F0FB00705DCB /* w4lCH3c-2.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +564,7 @@
 				DA4C18602189F3D3007DDA46 /* ModelNewView.swift in Sources */,
 				CC3AF9F1218DAA750059DAA2 /* CreateNewsController.swift in Sources */,
 				CC152FFA217F2CEB00B83816 /* Login1Presenter.swift in Sources */,
+				CC8812972199EE5C00705DCB /* ImageGif.swift in Sources */,
 				DAFC399E21894FDF00E02B9B /* CreateViewController.swift in Sources */,
 				CC763B2A217C475300717AB8 /* Login2.swift in Sources */,
 				DAFC39AE218961E100E02B9B /* CommunicationTableViewCell.swift in Sources */,

@@ -11,12 +11,17 @@ import UIKit
 
 class ServiceLogin: UIViewController {
     
+    @IBOutlet weak var loadImageGif: UIImageView!
     private var presenterServiceLogin: ServiceLoginPresenter?
     func inject(presenterServiceLogin: ServiceLoginPresenter){
         self.presenterServiceLogin = presenterServiceLogin
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let imageGif = UIImage.gifImageWithName(name: "w4lCH3c-2")
+        loadImageGif.image = imageGif
+       
         presenterServiceLogin?.loginSucess(viewDismis: self, viewPresent: self)
     }
     
@@ -26,21 +31,15 @@ protocol Dismis {
 }
 extension ServiceLogin: Dismis {
     func dismis() {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
-    
-    
 }
 extension ServiceLogin: PushPopNavigation {
-    func pushVC(view: UIViewController) {
-        
-    }
+    func pushVC(view: UIViewController) {}
     
     func present(view: UIViewController) {
-        self.present(view, animated: true, completion: nil)
+        self.present(view, animated: false, completion: nil)
     }
     
-    func popVC(view: UIViewController) {
-        
-    }
+    func popVC(view: UIViewController) {}
 }

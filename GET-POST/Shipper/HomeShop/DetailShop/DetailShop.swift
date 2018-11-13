@@ -10,7 +10,7 @@ import UIKit
 
 
 class DetailShop: UIViewController,ViewControllerTabar {
-
+    
     @IBOutlet weak fileprivate var passwdShop:      UITextField!
     @IBOutlet weak fileprivate var numberPhoneShop: UITextField!
     @IBOutlet weak fileprivate var nameShop:        UITextField!
@@ -30,19 +30,16 @@ class DetailShop: UIViewController,ViewControllerTabar {
         alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { (action:UIAlertAction) in
             UserDefaults.standard.removeObject(forKey: "numberPhone")
             
-            let vc = UIStoryboard(name: "Login1", bundle: Bundle.main).instantiateViewController(withIdentifier: "Login1")
-            let navVC = UINavigationController(rootViewController: vc)
-            let share = UIApplication.shared.delegate as? AppDelegate
-            share?.window?.rootViewController = navVC
-            share?.window?.makeKeyAndVisible()
+            
+            //            (UIApplication.shared.delegate as? AppDelegate)?.whateverWillOccur()
         }))
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = DetailShopPresenterImp()
-        }
+    }
     
-
-
-
+    
+    
+    
 }

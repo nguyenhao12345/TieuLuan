@@ -48,7 +48,7 @@ extension Login1: PushPopNavigation {
     func popVC(view: UIViewController) {}
     
     func present(view: UIViewController) {
-        present(view, animated: true)
+        present(view, animated: false)
     }
     
     func pushVC(view: UIViewController) {

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3TE-Kl-wZi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Route Controller-->
+        <scene sceneID="Dro-JQ-Q6R">
+            <objects>
+                <viewController id="3TE-Kl-wZi" customClass="RouteController" customModule="AppShipper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DrS-cJ-95z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ocl-4P-j4H">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3TE-Kl-wZi" id="Rqw-Pa-RPe"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EM-zk-kxT">
+                                <rect key="frame" x="268" y="70" width="87" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="DCA-zA-JsJ"/>
+                                </constraints>
+                                <state key="normal" title="Get location"/>
+                                <connections>
+                                    <action selector="clickCenterAuto:" destination="3TE-Kl-wZi" eventType="touchUpInside" id="9CM-0H-HUQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ocl-4P-j4H" firstAttribute="trailing" secondItem="sSX-OW-oJ4" secondAttribute="trailing" id="CZf-T8-bW7"/>
+                            <constraint firstItem="ocl-4P-j4H" firstAttribute="leading" secondItem="sSX-OW-oJ4" secondAttribute="leading" id="DHW-VV-ONk"/>
+                            <constraint firstItem="sSX-OW-oJ4" firstAttribute="trailing" secondItem="0EM-zk-kxT" secondAttribute="trailing" constant="20" id="L18-lm-ebr"/>
+                            <constraint firstItem="0EM-zk-kxT" firstAttribute="top" secondItem="sSX-OW-oJ4" secondAttribute="top" constant="50" id="UDi-yK-ank"/>
+                            <constraint firstItem="ocl-4P-j4H" firstAttribute="bottom" secondItem="sSX-OW-oJ4" secondAttribute="bottom" id="b3O-Fp-l0h"/>
+                            <constraint firstItem="ocl-4P-j4H" firstAttribute="top" secondItem="DrS-cJ-95z" secondAttribute="top" id="nhM-DC-yq7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sSX-OW-oJ4"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapRoute" destination="ocl-4P-j4H" id="h8z-IT-gMZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TIC-1V-fJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="7.6461769115442282"/>
+        </scene>
+    </scenes>
+</document>
